@@ -2,249 +2,819 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#315cce">
-<title>Missão Geografia — Revisão para a prova</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>:root{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Trilha do Vezes e Dividir</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Lexend:wght@400;500;700&family=JetBrains+Mono:wght@700&display=swap">
 <style>
-:root{--bg:#f4f7ff;--card:#fff;--ink:#17223b;--muted:#5d6980;--blue:#315cce;--blue2:#e8efff;--green:#137547;--greenbg:#e5f7ed;--red:#b42332;--redbg:#fff0f0;--gold:#ffcf5a;--line:#dce4f2;--shadow:0 8px 24px rgba(34,55,100,.09)}
-*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;font-size:18px;line-height:1.45}
-button,input{font:inherit} button{cursor:pointer;border:0;border-radius:16px;padding:13px 18px;font-weight:750;min-height:48px}
-.wrap{max-width:850px;margin:0 auto;padding:16px 14px 40px}
-.top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:6px 0 18px}
-.brand{font-weight:900;font-size:1.12rem;letter-spacing:.2px}.pill{background:#fff;border:1px solid var(--line);border-radius:99px;padding:7px 12px;font-size:.85rem;font-weight:800}
-.hero{background:linear-gradient(135deg,#315cce,#7049c7);color:white;border-radius:26px;padding:24px;box-shadow:var(--shadow)}
-.hero h1{font-size:clamp(1.8rem,6vw,2.6rem);line-height:1.05;margin:0 0 12px}.hero p{margin:0;max-width:650px;color:#f0f3ff}
-.card{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:22px;margin-top:16px;box-shadow:var(--shadow)}
-h2{font-size:1.35rem;margin:0 0 12px} h3{margin:0 0 8px}
-.small{font-size:.9rem;color:var(--muted)} .muted{color:var(--muted)}
+/* Layout: caderno quadriculado. Mapa da trilha em coluna, uma lição ou exercício por tela, contas montadas em células de grade */
+:root{
+  --bg:#EEF2F8; --paper:#FFFFFF; --grid:#DCE5F2; --ink:#1B2540; --muted:#5C6884; --line:#D3DBE8;
+  --accent:#2F5BEA; --accent-ink:#FFFFFF;
+  --mark:#FFE45C; --mark-ink:#1B2540;
+  --good:#13915A; --good-soft:#DDF3E7; --warn:#D4483F; --warn-soft:#FBE3E1; --sun:#E9A200;
+  --mul:#2F5BEA; --mul-soft:#DFE7FF; --div:#8A4FD8; --div-soft:#EDE2FB; --fim:#E07A1F; --fim-soft:#FCE9D6;
+  --display:'Bricolage Grotesque','Trebuchet MS',system-ui,sans-serif;
+  --body:'Lexend',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,Consolas,monospace;
+  --cell:2.4rem;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F1523; --paper:#172034; --grid:#25314C; --ink:#E8EDF8; --muted:#9DA9C3; --line:#2B3756;
+    --accent:#7FA0FF; --accent-ink:#0D1426;
+    --mark:#FFD84D; --mark-ink:#1B2540;
+    --good:#43D493; --good-soft:#15372A; --warn:#FF7D74; --warn-soft:#3D1E22; --sun:#FFC94D;
+    --mul:#7FA0FF; --mul-soft:#1E2B52; --div:#B78BFF; --div-soft:#2D2150; --fim:#FFA25A; --fim-soft:#3A2614;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F1523; --paper:#172034; --grid:#25314C; --ink:#E8EDF8; --muted:#9DA9C3; --line:#2B3756;
+  --accent:#7FA0FF; --accent-ink:#0D1426;
+  --mark:#FFD84D; --mark-ink:#1B2540;
+  --good:#43D493; --good-soft:#15372A; --warn:#FF7D74; --warn-soft:#3D1E22; --sun:#FFC94D;
+  --mul:#7FA0FF; --mul-soft:#1E2B52; --div:#B78BFF; --div-soft:#2D2150; --fim:#FFA25A; --fim-soft:#3A2614;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);line-height:1.12;text-wrap:balance;margin:0;font-weight:800}
+h1{font-size:clamp(1.6rem,5vw,2.2rem)}
+h2{font-size:1.3rem}
+p{margin:0}
+b{font-weight:700}
+.muted{color:var(--muted);font-size:.92rem}
+
+.app{max-width:780px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:10px 56px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding-block:6px 16px}
+.brand{font-family:var(--display);font-weight:800;font-size:1.35rem;display:flex;align-items:center;gap:8px;background:none;border:none;padding:0}
+.brand .sig{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:10px;background:var(--ink);color:var(--paper);font-family:var(--mono);font-size:1.05rem}
+.topright{display:flex;gap:8px;flex-wrap:wrap}
+.chip{display:inline-flex;align-items:center;gap:6px;background:var(--paper);border:2px solid var(--line);border-radius:999px;padding:7px 14px;font-weight:500;font-size:.92rem}
+.chip .s{color:var(--sun)}
+section{display:flex;flex-direction:column;gap:18px}
+
+/* Mapa */
+.hero{background:var(--paper);border:2px solid var(--line);border-radius:24px;padding:20px;display:flex;flex-direction:column;gap:12px;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:24px 24px}
+.hero p{max-width:52ch}
+.meter{display:flex;align-items:center;gap:12px;font-size:.9rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.meter .bar{flex:1;max-width:320px}
+.bar{height:12px;border-radius:99px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--good);border-radius:99px;transition:width .5s}
+.btn{border-radius:16px;padding:12px 20px;font-weight:700;background:var(--paper);border:2px solid var(--line);border-bottom-width:5px;font-size:1.02rem}
+.btn:active{transform:translateY(2px);border-bottom-width:3px}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn:disabled{opacity:.45;cursor:default}
 .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-.primary{background:var(--blue);color:#fff}.secondary{background:var(--blue2);color:var(--blue)}.plain{background:#f0f3f8;color:var(--ink)}.gold{background:var(--gold);color:#392b00}
-.progress-track{height:10px;background:#e8edf7;border-radius:99px;overflow:hidden;margin:10px 0}.progress-fill{height:100%;background:linear-gradient(90deg,#315cce,#8d5ce6);width:0%;transition:width .25s}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0}.stat{background:#f7f9ff;border:1px solid var(--line);border-radius:16px;padding:10px;text-align:center}.stat b{display:block;font-size:1.35rem}.stat span{font-size:.78rem;color:var(--muted)}
-.topic-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.topic{border:2px solid var(--line);background:#fff;border-radius:17px;padding:14px;text-align:left;color:var(--ink)}.topic.active{border-color:var(--blue);background:var(--blue2)}.topic span{display:block;font-size:.85rem;color:var(--muted);font-weight:500;margin-top:3px}
-.question-meta{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;color:var(--muted);font-size:.85rem;font-weight:750}
-.qtext{font-size:clamp(1.2rem,4vw,1.55rem);font-weight:850;line-height:1.3;margin:18px 0}
-.answers{display:grid;gap:10px}.answer{width:100%;text-align:left;background:#f8faff;border:2px solid var(--line);color:var(--ink);padding:15px 16px;display:flex;gap:12px;align-items:flex-start;line-height:1.35}.letter{background:#e9eef9;border-radius:9px;min-width:30px;height:30px;display:grid;place-items:center;font-weight:900}.answer.selected{border-color:var(--blue);background:var(--blue2)}.answer.correct{border-color:var(--green);background:var(--greenbg)}.answer.wrong{border-color:var(--red);background:var(--redbg)}.answer:disabled{cursor:default;opacity:1}
-.feedback{border-radius:16px;padding:14px;margin-top:14px;font-weight:650}.feedback.good{background:var(--greenbg);color:#105e39}.feedback.bad{background:var(--redbg);color:#91202b}.feedback .explain{font-weight:500;margin-top:6px}
-.hide{display:none!important}.break-card{background:#fff8df;border:1px solid #f4dc87;border-radius:18px;padding:18px;margin-top:14px}
-.review-item{border:1px solid var(--line);border-radius:16px;padding:14px;margin-top:10px}.review-item .wrongtext{color:var(--red);margin:6px 0}.review-item .righttext{color:var(--green);font-weight:800}
-.badge{display:inline-block;background:#f0ebff;color:#6741b8;border-radius:99px;padding:5px 10px;font-size:.8rem;font-weight:800}
-footer{text-align:center;color:var(--muted);font-size:.82rem;padding:22px 10px}
-@media(max-width:540px){body{font-size:17px}.card{padding:17px;border-radius:20px}.hero{padding:20px}.topic-grid{grid-template-columns:1fr}.stats{gap:6px}.stat{padding:8px 4px}.stat b{font-size:1.15rem}.row button{flex:1}}
-@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+.mod{display:flex;flex-direction:column;gap:10px}
+.modhead{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;padding-top:6px}
+.modhead span{color:var(--muted);font-size:.92rem}
+.path{position:relative;display:flex;flex-direction:column;gap:10px}
+.path::before{content:"";position:absolute;left:31px;top:24px;bottom:24px;border-left:4px dotted var(--line)}
+.node{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:14px;text-align:left;background:var(--paper);border:2px solid var(--line);border-radius:18px;padding:10px 14px 10px 8px}
+.node .num{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-family:var(--mono);font-size:1.05rem;background:var(--soft);color:var(--c);border:3px solid var(--c)}
+.node.done .num{background:var(--c);color:var(--paper)}
+.node.next{border-color:var(--c);box-shadow:0 0 0 3px var(--soft)}
+.node b{display:block;font-family:var(--display);font-size:1.12rem;line-height:1.2}
+.node small{display:block;color:var(--muted);font-size:.85rem}
+.node .st{font-size:1.05rem;color:var(--sun);letter-spacing:.06em;white-space:nowrap}
+.node .st .off{color:var(--line)}
+.node:disabled{opacity:.5;cursor:default}
+.node .lock{font-size:.8rem;color:var(--muted)}
+.footer{display:flex;flex-direction:column;gap:10px;align-items:center;padding-top:10px}
+.link{background:none;border:none;color:var(--muted);text-decoration:underline;text-underline-offset:3px;padding:6px}
+
+/* Lição e exercício */
+.phead{display:flex;align-items:center;gap:12px}
+.phead .bar{flex:1}
+.phead span{font-size:.88rem;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.card{background:var(--paper);border:2px solid var(--line);border-radius:24px;padding:22px 18px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.eyebrow{font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700;color:var(--c,var(--muted))}
+.body{display:flex;flex-direction:column;gap:12px;max-width:62ch}
+.tip{background:var(--mark);color:var(--mark-ink);border-radius:12px;padding:10px 14px;font-weight:500;align-self:flex-start;max-width:100%}
+.facts{display:flex;flex-wrap:wrap;gap:6px}
+.facts span{font-family:var(--mono);font-size:.92rem;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:4px 8px;font-variant-numeric:tabular-nums}
+.steplist{margin:0;padding-left:1.3em;display:flex;flex-direction:column;gap:6px}
+.navrow{display:flex;justify-content:space-between;gap:10px}
+.widget:empty{display:none}
+.widget{display:flex;flex-direction:column;gap:12px;align-items:center;background:var(--bg);border-radius:18px;padding:16px;min-width:0}
+
+.visual{display:flex;flex-direction:column;align-items:center;gap:10px;min-width:0;max-width:100%}
+.visual:empty{display:none}
+.expr{font-family:var(--mono);font-weight:700;font-size:clamp(2.4rem,10vw,3.6rem);line-height:1.1;font-variant-numeric:tabular-nums}
+.story{font-size:1.15rem;font-weight:500;max-width:46ch;text-align:center}
+.ask{font-family:var(--display);font-weight:800;font-size:clamp(1.3rem,4.6vw,1.7rem);text-align:center}
+.ask .pstep{display:block;font-family:var(--body);font-size:.8rem;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.ansrow{display:flex;gap:10px;justify-content:center}
+#pIn{width:min(220px,55vw);font-family:var(--mono);font-size:2rem;text-align:center;padding:8px 12px;border-radius:16px;border:3px solid var(--line);background:var(--bg);color:var(--ink);font-variant-numeric:tabular-nums}
+#pIn.wrong{border-color:var(--warn);animation:shake .35s}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+.keypad{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;width:min(320px,100%);margin:0 auto}
+.keypad button{min-height:56px;border-radius:14px;background:var(--bg);border:2px solid var(--line);border-bottom-width:4px;font-family:var(--mono);font-size:1.5rem}
+.keypad button.ok{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);font-family:var(--body);font-size:1.05rem;font-weight:700}
+.keypad button:active{transform:translateY(2px)}
+.choices{display:flex;gap:12px;justify-content:center}
+.choices button{width:110px;height:96px;border-radius:20px;font-family:var(--mono);font-size:2.6rem;background:var(--bg);border:3px solid var(--line);border-bottom-width:7px}
+.choices button.wrong{border-color:var(--warn);background:var(--warn-soft);opacity:.6}
+.fb{text-align:center;font-family:var(--display);font-weight:800;font-size:1.25rem;min-height:1.5em}
+.fb.good{color:var(--good)}
+.fb.soft{color:var(--warn)}
+.hint{background:var(--bg);border:2px dashed var(--line);border-radius:16px;padding:12px 16px;display:flex;flex-direction:column;gap:6px;font-size:.98rem}
+.hint::before{content:"Dica";font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700;color:var(--muted)}
+
+/* Folha quadriculada e contas */
+.sheet{display:inline-block;max-width:100%;overflow-x:auto;background-color:var(--paper);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:var(--cell) var(--cell);border:2px solid var(--line);border-radius:14px;padding:calc(var(--cell) * .5)}
+.g{display:grid}
+.cell{width:var(--cell);height:var(--cell);display:grid;place-items:center;font-family:var(--mono);font-weight:700;font-size:1.5rem;font-variant-numeric:tabular-nums}
+.cell.carry{font-size:.95rem;color:var(--accent);place-items:end center}
+.cell.hl{background:var(--mark);color:var(--mark-ink);border-radius:6px}
+.cell.under{border-bottom:3px solid var(--ink)}
+.cell.ink{color:var(--accent)}
+.cell.brought{color:var(--div)}
+.chave{display:flex;align-items:flex-start}
+.right{border-left:3px solid var(--ink);margin-left:4px}
+.dv,.qt{height:var(--cell);display:flex;align-items:center;padding:0 .5em;font-family:var(--mono);font-weight:700;font-size:1.5rem;min-width:calc(var(--cell) * 2)}
+.dv{border-bottom:3px solid var(--ink)}
+.qt{color:var(--accent);letter-spacing:.2em}
+.note{font-weight:500;text-align:center;max-width:48ch}
+.names{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;width:100%}
+.names div{background:var(--paper);border:2px solid var(--line);border-radius:12px;padding:8px 12px;font-size:.92rem}
+.names b{display:block;font-family:var(--mono)}
+
+.dot{display:inline-block;width:16px;height:16px;border-radius:50%;background:var(--c,var(--mul))}
+.dot.left{--c:var(--warn)}
+.groups{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.box{display:flex;flex-wrap:wrap;gap:5px;max-width:96px;justify-content:center;padding:10px;border:2px solid var(--line);border-radius:14px;background:var(--paper)}
+.box.left{border-style:dashed;border-color:var(--warn)}
+.pile{display:flex;flex-wrap:wrap;gap:5px;max-width:300px;justify-content:center}
+.arr{display:grid;gap:4px;--sq:22px}
+.arr i{width:var(--sq);height:var(--sq);border-radius:5px;background:var(--mul)}
+.arr.small{--sq:12px;gap:3px}
+.plates{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.plate{display:flex;flex-direction:column;align-items:center;gap:6px}
+.plate .box{min-width:70px;min-height:54px;border-radius:50%/40%}
+.plate small{font-size:.8rem;color:var(--muted)}
+.ctrls{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.stp{display:flex;align-items:center;gap:8px;background:var(--paper);border:2px solid var(--line);border-radius:14px;padding:6px 8px 6px 12px;font-size:.92rem}
+.stp button{width:36px;height:36px;border-radius:10px;border:2px solid var(--line);background:var(--bg);font-size:1.2rem;font-weight:700}
+.stp b{font-family:var(--mono);min-width:1.6em;text-align:center;font-size:1.15rem}
+.eq{font-family:var(--mono);font-size:1.15rem;text-align:center;font-variant-numeric:tabular-nums}
+.eq.big{font-size:1.6rem}
+.area{display:flex;width:min(100%,440px);height:118px;border:3px solid var(--ink);border-radius:8px;overflow:hidden}
+.ab{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;background:var(--mul-soft);min-width:0;padding:4px}
+.ab.b2{background:var(--div-soft);border-left:3px solid var(--ink)}
+.ab small{font-family:var(--mono);font-size:.85rem;color:var(--muted)}
+.ab b{font-family:var(--mono);font-size:1.5rem}
+.tri{display:grid;place-items:center;gap:4px;font-family:var(--mono);font-weight:700}
+.tri .top{font-size:2rem;color:var(--div)}
+.tri .base{display:flex;gap:46px;font-size:1.6rem;color:var(--mul)}
+.fam{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;font-family:var(--mono);font-size:1.05rem}
+.fam span{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:6px 10px;text-align:center}
+
+.ttable{overflow-x:auto;max-width:100%}
+.tgrid{display:grid;grid-template-columns:repeat(11,minmax(30px,1fr));gap:3px;min-width:340px}
+.tgrid button,.tgrid span{aspect-ratio:1;border-radius:6px;font-family:var(--mono);font-size:.82rem;display:grid;place-items:center;border:1px solid var(--line);background:var(--paper);padding:0}
+.tgrid span{background:var(--ink);color:var(--paper);border-color:var(--ink);font-size:.9rem}
+.tgrid button.inline{background:var(--mul-soft)}
+.tgrid button.sel{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.tgrid button.new{background:var(--mark);color:var(--mark-ink)}
+.tdetail{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;min-height:60px}
+
+/* Fim de fase */
+.center{text-align:center;align-items:center}
+.bigstars{font-size:3rem;letter-spacing:.1em;color:var(--sun)}
+.bigstars .off{color:var(--line)}
+.bigstars span{display:inline-block;animation:pop .45s backwards}
+@keyframes pop{0%{transform:scale(0)}70%{transform:scale(1.3)}100%{transform:scale(1)}}
+.breaknote{background:var(--paper);border:2px solid var(--line);border-radius:16px;padding:12px 16px;max-width:46ch}
+.actions{display:flex;flex-direction:column;gap:10px;width:min(400px,100%)}
+
+@media (max-width:440px){
+  :root{--cell:2rem}
+  .cell,.dv,.qt{font-size:1.25rem}
+  .node{gap:10px}
+  .node .num{width:38px;height:38px;font-size:.95rem}
+  .path::before{left:28px}
+  .card{padding:18px 14px}
+  .names{grid-template-columns:minmax(0,1fr)}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <div class="top"><div class="brand">🧠 MISSÃO GEOGRAFIA</div><div class="pill">📚 Revisão para a prova</div></div>
-  <section class="hero">
-    <h1>Aprender em pequenas missões!</h1>
-    <p>Questões baseadas nas páginas 90 a 121 enviadas do livro. Faça uma etapa por vez, receba feedback e revise no final o que precisa praticar.</p>
-  </section>
 
-  <section id="home" class="card">
-    <h2>Como você quer estudar hoje?</h2>
-    <p class="small">Para facilitar a concentração: sessões curtas, uma pergunta por tela, sem cronômetro e com pausas. Não precisa correr!</p>
-    <div class="stats">
-      <div class="stat"><b id="totalCount">90</b><span>questões no total</span></div>
-      <div class="stat"><b>5</b><span>perguntas por missão</span></div>
-      <div class="stat"><b>⭐</b><span>pontos por acerto</span></div>
+<div class="app">
+  <header class="top">
+    <button class="brand" id="goMap"><span class="sig">×÷</span>Trilha do Vezes e Dividir</button>
+    <div class="topright">
+      <span class="chip" aria-label="Estrelas"><span class="s">★</span><span id="starTotal">0</span></span>
+      <button class="chip" id="goTable">Tabuada</button>
+      <button class="chip" id="btnSound" aria-pressed="true">Som ligado</button>
     </div>
-    <h3>Escolha um assunto</h3>
-    <div id="topics" class="topic-grid"></div>
-    <div class="row" style="margin-top:16px">
-      <button id="startBtn" class="primary">Começar missão 🚀</button>
-      <button id="allBtn" class="secondary">Misturar todos os assuntos</button>
-    </div>
-    <p class="small" style="margin-top:14px">Dica: faça uma missão de 5 questões, levante um pouco, beba água e depois continue se quiser.</p>
-  </section>
+  </header>
 
-  <section id="quiz" class="card hide">
-    <div class="question-meta"><span id="missionLabel">MISSÃO 1</span><span id="topicLabel">Assunto</span></div>
-    <div class="progress-track"><div id="progressFill" class="progress-fill"></div></div>
-    <div class="question-meta"><span id="questionCount">Questão 1 de 5</span><span id="scoreLabel">⭐ 0 pontos</span></div>
-    <div id="qText" class="qtext"></div>
-    <div id="answers" class="answers"></div>
-    <div id="feedback" class="feedback hide" aria-live="polite"></div>
-    <div class="row" style="margin-top:18px">
-      <button id="nextBtn" class="primary hide">Próxima questão ➜</button>
-      <button id="pauseBtn" class="plain">Fazer uma pausa ☕</button>
-    </div>
-    <div id="pauseBox" class="break-card hide">
-      <h3>🌿 Pausa rápida</h3><p>Solte os ombros, respire devagar três vezes e olhe para longe da tela. Você pode voltar quando estiver pronto.</p>
-      <button id="resumeBtn" class="primary">Voltar à missão</button>
-    </div>
-  </section>
+  <main>
+    <section id="map">
+      <div class="hero">
+        <h1 id="heroTitle">Vamos aprender a multiplicar e dividir</h1>
+        <p id="heroText">Cada fase tem uma explicação curtinha e depois alguns exercícios. Errar não tira ponto: a dica aparece e você tenta de novo.</p>
+        <div class="meter"><div class="bar"><i id="mapBar"></i></div><span id="mapCount">0 de 14 fases</span></div>
+        <div class="row"><button class="btn primary" id="btnContinue">Começar a fase 1</button><button class="btn" id="btnQuick">Treino rápido de tabuada</button></div>
+      </div>
+      <div id="mods"></div>
+      <div class="footer">
+        <button class="link" id="btnUnlock">Liberar todas as fases</button>
+        <div class="row">
+          <button class="link" id="btnReset">Apagar progresso</button>
+          <button class="link" id="btnResetYes" hidden>Sim, apagar tudo</button>
+          <button class="link" id="btnResetNo" hidden>Cancelar</button>
+        </div>
+        <p class="muted">O progresso fica salvo neste navegador, neste aparelho.</p>
+      </div>
+    </section>
 
-  <section id="missionDone" class="card hide">
-    <div class="badge">MISSÃO CONCLUÍDA 🎉</div>
-    <h2 style="margin-top:12px">Você terminou esta etapa!</h2>
-    <p id="missionMessage"></p>
-    <div class="stats">
-      <div class="stat"><b id="missionCorrect">0</b><span>acertos</span></div>
-      <div class="stat"><b id="missionWrong">0</b><span>para revisar</span></div>
-      <div class="stat"><b id="missionPoints">0</b><span>pontos ganhos</span></div>
-    </div>
-    <p>Você pode fazer uma pausa ou seguir para a próxima missão. Errar faz parte do aprendizado.</p>
-    <div class="row"><button id="continueBtn" class="primary">Próxima missão 🚀</button><button id="finishBtn" class="secondary">Ver meu resultado</button></div>
-  </section>
+    <section id="lesson" hidden>
+      <div class="phead"><button class="chip" id="lQuit">Mapa</button><div class="bar"><i id="lBar"></i></div><span id="lCount"></span></div>
+      <div class="card" id="lCard">
+        <p class="eyebrow" id="lMod"></p>
+        <h1 id="lH"></h1>
+        <div class="body" id="lBody"></div>
+        <div class="widget" id="lW"></div>
+      </div>
+      <div class="navrow"><button class="btn" id="lPrev">Voltar</button><button class="btn primary" id="lNext">Próximo</button></div>
+    </section>
 
-  <section id="results" class="card hide">
-    <div class="badge">RELATÓRIO FINAL</div>
-    <h2 style="margin-top:12px">Veja o que você já aprendeu</h2>
-    <div class="stats">
-      <div class="stat"><b id="finalCorrect">0</b><span>acertos</span></div>
-      <div class="stat"><b id="finalWrong">0</b><span>erros para revisar</span></div>
-      <div class="stat"><b id="finalPercent">0%</b><span>aproveitamento</span></div>
-    </div>
-    <div class="progress-track"><div id="finalProgress" class="progress-fill"></div></div>
-    <p id="finalMessage"></p>
-    <h3>📌 Questões para revisar</h3>
-    <p class="small">Aqui aparecem as perguntas erradas, sua resposta e a resposta correta. Leia a explicação e tente responder em voz alta.</p>
-    <div id="wrongList"></div>
-    <h3 style="margin-top:22px">🏅 Medalhas da missão</h3>
-    <div id="medals" class="row"></div>
-    <div class="row" style="margin-top:20px"><button id="retryWrongBtn" class="primary">Treinar só as que errei</button><button id="restartBtn" class="secondary">Recomeçar do início</button><button id="homeBtn" class="plain">Voltar aos assuntos</button></div>
-  </section>
-  <footer>Conteúdo montado a partir das páginas fotografadas do livro. Este arquivo funciona sem internet depois de salvo no tablet.</footer>
+    <section id="practice" hidden>
+      <div class="phead"><button class="chip" id="pQuit">Sair</button><div class="bar"><i id="pBar"></i></div><span id="pCount"></span></div>
+      <div class="card" id="pCard">
+        <p class="eyebrow" id="pTitle"></p>
+        <div class="visual" id="pVis"></div>
+        <p class="ask" id="pAsk"></p>
+        <div id="pInputWrap">
+          <div class="ansrow"><input id="pIn" type="text" inputmode="numeric" autocomplete="off" maxlength="5" aria-label="Sua resposta"></div>
+        </div>
+        <div class="choices" id="pChoices" hidden></div>
+        <p class="fb" id="pFb" aria-live="polite"></p>
+        <div class="hint" id="pHint" hidden></div>
+        <div class="keypad" id="keypad">
+          <button data-k="1">1</button><button data-k="2">2</button><button data-k="3">3</button>
+          <button data-k="4">4</button><button data-k="5">5</button><button data-k="6">6</button>
+          <button data-k="7">7</button><button data-k="8">8</button><button data-k="9">9</button>
+          <button data-k="del" aria-label="Apagar">⌫</button><button data-k="0">0</button><button data-k="ok" class="ok">Conferir</button>
+        </div>
+        <button class="link" id="pHintBtn">Mostrar dica</button>
+      </div>
+    </section>
+
+    <section id="finish" class="center" hidden>
+      <p class="eyebrow" id="fMod"></p>
+      <h1 id="fTitle">Fase completa!</h1>
+      <div class="bigstars" id="fStars"></div>
+      <p id="fText"></p>
+      <p class="breaknote">Antes da próxima fase: levante, beba um gole de água e estique os braços até o teto. O cérebro aprende melhor com pausas curtas.</p>
+      <div class="actions">
+        <button class="btn primary" id="fNext">Próxima fase</button>
+        <button class="btn" id="fRetry">Fazer esta fase de novo</button>
+        <button class="link" id="fMap">Voltar ao mapa</button>
+      </div>
+    </section>
+
+    <section id="table" hidden>
+      <div class="card">
+        <p class="eyebrow">Consulta</p>
+        <h1>Tabela da tabuada</h1>
+        <p class="muted">Toque numa casinha para ver a conta desenhada e um jeito fácil de lembrar.</p>
+        <div class="widget" id="tW"></div>
+      </div>
+      <button class="btn" id="tBack">Voltar</button>
+    </section>
+  </main>
 </div>
+
 <script>
-const BANK = [
-{t:"Funções das cidades",q:"Uma cidade com universidades importantes que atrai estudantes de outras regiões é uma cidade…",o:["portuária","universitária","industrial","administrativa"],a:1,e:"O livro chama essas cidades de universitárias. São Carlos (SP) e Santa Maria (RS) são exemplos."},
-{t:"Funções das cidades",q:"Qual cidade aparece como exemplo de cidade turística?",o:["Cabo de Santo Agostinho (PE)","Brasília (DF)","Camaçari (BA)","Paranaguá (PR)"],a:0,e:"Cabo de Santo Agostinho é citada por suas praias. Caxambu (MG) também é exemplo turístico."},
-{t:"Funções das cidades",q:"Cidades com construções e monumentos de grande valor histórico são chamadas de…",o:["industriais","portuárias","históricas","universitárias"],a:2,e:"Paraty, Mariana, Ouro Preto e Olinda aparecem como exemplos de cidades históricas."},
-{t:"Funções das cidades",q:"Qual é uma característica das cidades industriais?",o:["Concentram indústrias importantes para a economia local","Possuem somente templos religiosos","São todas capitais nacionais","Não têm atividades econômicas"],a:0,e:"A atividade industrial ocupa posição de destaque na economia local."},
-{t:"Funções das cidades",q:"Qual destas é citada como cidade religiosa?",o:["Aparecida (SP)","Itajaí (SC)","Caxambu (MG)","Campinas (SP)"],a:0,e:"Aparecida (SP) e Juazeiro do Norte (CE) são exemplos brasileiros do livro."},
-{t:"Funções das cidades",q:"Brasília é exemplo de cidade…",o:["portuária","administrativa","universitária apenas","industrial apenas"],a:1,e:"Brasília concentra órgãos da administração pública federal, como o Congresso Nacional e o Palácio do Planalto."},
-{t:"Funções das cidades",q:"Cidades que possuem portos importantes são chamadas de…",o:["cidades históricas","cidades portuárias","cidades religiosas","cidades espontâneas"],a:1,e:"Itajaí, Santos e Paranaguá são exemplos citados."},
-{t:"Funções das cidades",q:"Uma mesma cidade pode exercer mais de uma função?",o:["Não, nunca","Sim, pode reunir várias atividades","Só se for capital do país","Só se tiver universidade"],a:1,e:"O livro usa Campinas e Rio de Janeiro como exemplos de cidades com várias funções."},
-{t:"Funções das cidades",q:"Campinas (SP) é citada como cidade com atividades…",o:["industriais e universitárias","religiosas e portuárias","somente administrativas","somente históricas"],a:0,e:"Campinas reúne atividade industrial e universitária."},
-{t:"Funções das cidades",q:"Qual par contém exemplos de cidades portuárias citadas no livro?",o:["Santos e Paranaguá","Caxambu e Aparecida","Mariana e Olinda","São Carlos e Santa Maria"],a:0,e:"Santos (SP) e Paranaguá (PR) são cidades portuárias."},
-{t:"História e organização",q:"Qual conjunto contém fatores naturais que podem favorecer o crescimento de uma cidade?",o:["Água, clima e fertilidade do solo","Somente lojas e shoppings","Somente avenidas","Apenas fábricas"],a:0,e:"O livro destaca disponibilidade de água, condições climáticas e fertilidade do solo."},
-{t:"História e organização",q:"Uma cidade espontânea é aquela que…",o:["cresce sem projeto urbano prévio","é sempre construída em um único ano","não muda com o tempo","tem somente ruas retas"],a:0,e:"As cidades espontâneas surgem e crescem ao longo do tempo sem planejamento urbano prévio."},
-{t:"História e organização",q:"Qual é um exemplo de cidade planejada citado no livro?",o:["Brasília (DF)","São Paulo (SP)","Rio de Janeiro (RJ)","Nova York"],a:0,e:"Brasília, Belo Horizonte e Goiânia são exemplos de cidades planejadas citados."},
-{t:"História e organização",q:"O que diferencia uma cidade planejada de uma espontânea?",o:["A planejada foi organizada com base em projeto anterior","A espontânea não tem moradores","A planejada não tem ruas","A espontânea não possui atividades econômicas"],a:0,e:"Nas cidades planejadas, o traçado das ruas, quarteirões e setores é pensado previamente."},
-{t:"História e organização",q:"Segundo o texto, as cidades se transformam ao longo do tempo em suas…",o:["paisagens, construções, atividades e vias","somente nomes","apenas fronteiras estaduais","somente temperaturas"],a:0,e:"O crescimento muda a paisagem, a arquitetura, as atividades econômicas e as vias de circulação."},
-{t:"Urbanização",q:"Urbanização é o processo relacionado…",o:["ao crescimento das cidades e da população urbana","à transformação de cidades em florestas","à diminuição de toda população urbana","somente à construção de portos"],a:0,e:"O livro relaciona urbanização ao crescimento das cidades e ao aumento da população urbana em relação à rural."},
-{t:"Urbanização",q:"Qual situação pode contribuir para o crescimento das cidades?",o:["Migração de pessoas em busca de trabalho e melhores condições de vida","Ausência de moradores","Fim de todas as atividades econômicas","Desaparecimento das construções"],a:0,e:"O livro cita migração, oportunidades de trabalho e melhores condições de vida."},
-{t:"Urbanização",q:"O que é a mancha urbana?",o:["A área ocupada por construções urbanas","Uma área somente de floresta","O nome de um rio","Apenas o centro histórico"],a:0,e:"Quanto mais áreas são ocupadas e construídas, maior pode ficar a mancha urbana."},
-{t:"Urbanização",q:"Como observar a expansão da mancha urbana ao longo do tempo?",o:["Comparando imagens de satélite de anos diferentes","Olhando apenas o nome da cidade","Contando os monumentos","Observando somente o clima"],a:0,e:"As imagens de Cuiabá comparam os anos de 1986, 1996, 2006 e 2016."},
-{t:"Urbanização",q:"O aumento da mancha urbana geralmente significa que…",o:["mais áreas estão sendo ocupadas por construções","todas as casas desapareceram","a cidade virou área rural","a população necessariamente acabou"],a:0,e:"A mancha urbana corresponde à área construída da cidade."},
-{t:"Centro, periferia e áreas verdes",q:"O centro urbano costuma concentrar…",o:["comércio e serviços","somente plantações","apenas florestas","somente áreas rurais"],a:0,e:"O livro cita lojas, padarias, restaurantes, hospitais, escolas, universidades e transportes."},
-{t:"Centro, periferia e áreas verdes",q:"Qual elemento pode ser encontrado em um centro urbano?",o:["Hospital, escola ou terminal de ônibus","Somente área de cultivo","Apenas floresta sem construções","Exclusivamente fazendas"],a:0,e:"O centro costuma reunir estabelecimentos comerciais, serviços e transportes."},
-{t:"Centro, periferia e áreas verdes",q:"A periferia é descrita no livro como…",o:["uma área urbana que pode ficar mais distante do centro","uma cidade que não tem moradores","uma área sempre fora do município","um lugar que não pode ter cultura"],a:0,e:"O livro explica que a periferia pode se situar mais distante do centro, próxima aos limites da mancha urbana."},
-{t:"Centro, periferia e áreas verdes",q:"Que atividade pode acontecer na periferia, segundo o livro?",o:["Manifestações culturais e ações artísticas comunitárias","Somente atividades portuárias","Apenas administração federal","Somente turismo religioso"],a:0,e:"O exemplo de Pachuca, no México, mostra casas transformadas em mural artístico."},
-{t:"Centro, periferia e áreas verdes",q:"Qual é uma função das Áreas de Preservação Permanente (APPs)?",o:["Proteger áreas ambientalmente vulneráveis","Estimular a ocupação inadequada de encostas","Eliminar cursos de água","Substituir áreas verdes por prédios"],a:0,e:"As APPs ajudam a preservar solo, cursos de água e áreas verdes."},
-{t:"Centro, periferia e áreas verdes",q:"Qual benefício ambiental é associado às APPs no livro?",o:["Ajudar a diminuir riscos de enchentes","Aumentar a poluição dos rios","Eliminar a umidade do ar","Acelerar a ocupação de morros"],a:0,e:"A preservação pode reduzir ameaças de enchentes e melhorar a qualidade do ambiente urbano."},
-{t:"Metrópoles",q:"O que é uma metrópole, conforme a definição do livro?",o:["Uma cidade de grande porte e importante centro urbano, com grande poder de atração","Uma cidade sem influência sobre outras","Uma área exclusivamente rural","Um município sem serviços"],a:0,e:"As metrópoles atraem população de cidades próximas e influenciam outras cidades."},
-{t:"Metrópoles",q:"As metrópoles exercem influência principalmente sobre…",o:["as populações de cidades próximas","somente as áreas rurais distantes","apenas os portos estrangeiros","nenhuma outra cidade"],a:0,e:"O livro destaca o poder de atração e a influência das metrópoles sobre cidades próximas."},
-{t:"Metrópoles",q:"Segundo o livro, a rede urbana é…",o:["um conjunto de cidades que possuem interações e conexões","uma única cidade isolada","uma rede somente de estradas rurais","um grupo de bairros sem ligação"],a:0,e:"As cidades se relacionam e se influenciam dentro de uma rede urbana."},
-{t:"Metrópoles",q:"O que é hierarquia urbana?",o:["A ordem de importância das cidades em uma rede urbana","A idade de todos os prédios","A quantidade de rios de cada cidade","A divisão das cidades por clima"],a:0,e:"A hierarquia urbana organiza as cidades conforme sua importância na rede urbana."},
-{t:"Metrópoles",q:"Qual nível aparece no topo da hierarquia urbana brasileira do livro?",o:["Grande metrópole nacional","Centro local","Centro de zona","Centro sub-regional"],a:0,e:"São Paulo aparece como grande metrópole nacional."},
-{t:"Metrópoles",q:"Qual cidade é classificada como grande metrópole nacional no livro?",o:["São Paulo (SP)","Manaus (AM)","Recife (PE)","Vitória (ES)"],a:0,e:"São Paulo é apresentada como a grande metrópole nacional."},
-{t:"Metrópoles",q:"Quais cidades aparecem como metrópoles nacionais?",o:["Brasília e Rio de Janeiro","Manaus e Belém","Curitiba e Vitória","Recife e Florianópolis"],a:0,e:"O livro apresenta Brasília (DF) e Rio de Janeiro (RJ) como metrópoles nacionais."},
-{t:"Hierarquia urbana",q:"Quantos níveis de hierarquia urbana são apresentados nas páginas?",o:["Três","Quatro","Cinco","Sete"],a:2,e:"São cinco: metrópoles, capitais regionais, centros sub-regionais, centros de zona e centros locais."},
-{t:"Hierarquia urbana",q:"Qual sequência vai do nível mais alto para o mais baixo, segundo o livro?",o:["Metrópoles, capitais regionais, centros sub-regionais, centros de zona, centros locais","Centros locais, metrópoles, capitais regionais, centros de zona, centros sub-regionais","Capitais regionais, centros locais, metrópoles, centros de zona, centros sub-regionais","Centros de zona, centros locais, metrópoles, capitais regionais, centros sub-regionais"],a:0,e:"Essa é a ordem de importância mostrada no esquema do livro."},
-{t:"Hierarquia urbana",q:"Quantas capitais regionais são indicadas no esquema do livro?",o:["15","97","352","398"],a:1,e:"O livro indica 97 capitais regionais."},
-{t:"Hierarquia urbana",q:"Quantos centros sub-regionais são indicados no esquema?",o:["97","352","398","4.037"],a:1,e:"O livro indica 352 centros sub-regionais."},
-{t:"Hierarquia urbana",q:"Quantos centros de zona são indicados no esquema?",o:["15","97","398","4.037"],a:2,e:"O livro indica 398 centros de zona."},
-{t:"Hierarquia urbana",q:"Qual número o livro apresenta para os centros locais?",o:["15","352","398","4.037"],a:3,e:"O esquema apresenta 4.037 centros locais."},
-{t:"Hierarquia urbana",q:"Os centros locais são cidades cuja influência…",o:["não ultrapassa o próprio município","abrange necessariamente todo o país","é sempre internacional","alcança todos os continentes"],a:0,e:"O livro define centros locais como cidades de menor porte cuja influência não extrapola o município."},
-{t:"Hierarquia urbana",q:"Capitais regionais têm importante influência sobre…",o:["outros municípios de sua região","somente uma rua","todos os países do mundo","nenhuma localidade"],a:0,e:"Elas guardam influência regional e podem ter população importante."},
-{t:"Regiões metropolitanas",q:"O que é uma região metropolitana?",o:["Um conjunto de municípios vizinhos integrados por ligações socioeconômicas com um centro urbano principal","Um município sem ligação com outros","Somente o centro histórico de uma cidade","Uma área exclusivamente rural"],a:0,e:"O livro destaca a integração de municípios vizinhos e suas ligações com um centro urbano principal."},
-{t:"Regiões metropolitanas",q:"Por que municípios de uma região metropolitana são integrados?",o:["Por fluxos de pessoas, produtos e mercadorias e por redes de transporte","Porque todos têm exatamente o mesmo tamanho","Porque não possuem vias de circulação","Porque não têm relações econômicas"],a:0,e:"O texto destaca fluxos intensos de pessoas, produtos e mercadorias e redes de transporte."},
-{t:"Regiões metropolitanas",q:"Qual mapa é mostrado nas páginas sobre região metropolitana?",o:["Região metropolitana de Belo Horizonte","Região metropolitana de Manaus apenas","Região metropolitana de Brasília apenas","Região metropolitana de Santos apenas"],a:0,e:"As páginas mostram o mapa da Região Metropolitana de Belo Horizonte e a imagem de satélite de Belo Horizonte e Contagem."},
-{t:"Regiões metropolitanas",q:"Por que pode ser difícil perceber o limite entre dois municípios de uma região metropolitana?",o:["Porque as áreas urbanizadas podem estar praticamente unidas","Porque os municípios não têm habitantes","Porque há sempre uma floresta entre eles","Porque não existem construções"],a:0,e:"A imagem de satélite mostra áreas urbanas contíguas, como Belo Horizonte e Contagem."},
-{t:"Metrópoles brasileiras",q:"Qual cidade é considerada a grande metrópole nacional no livro?",o:["São Paulo","Curitiba","Fortaleza","Belém"],a:0,e:"O texto afirma que São Paulo exerce influência sobre todo o país."},
-{t:"Metrópoles brasileiras",q:"Qual cidade aparece no mapa como metrópole brasileira na região Norte?",o:["Manaus","Campinas","Vitória","Florianópolis"],a:0,e:"Manaus (AM) aparece na lista de metrópoles."},
-{t:"Metrópoles brasileiras",q:"Qual cidade aparece na lista de metrópoles e fica em Pernambuco?",o:["Recife","Goiânia","Curitiba","Porto Alegre"],a:0,e:"Recife (PE) aparece na lista de metrópoles brasileiras."},
-{t:"Mobilidade urbana",q:"O que significa mobilidade urbana no livro?",o:["As condições de deslocamento das pessoas na cidade","Somente a construção de prédios","A quantidade de parques de uma cidade","A história dos monumentos"],a:0,e:"O texto define como mobilidade urbana as condições de deslocamento nas cidades."},
-{t:"Mobilidade urbana",q:"Qual problema de mobilidade é mostrado nas fotografias?",o:["Trânsito intenso e congestionamentos","Ausência total de veículos","Excesso de áreas agrícolas","Falta de qualquer rua"],a:0,e:"As imagens mostram grande quantidade de veículos e trânsito intenso."},
-{t:"Mobilidade urbana",q:"Segundo o livro, qual meio de transporte é muito utilizado, mas também contribui para congestionamentos?",o:["Carro","Barco de pesca","Avião","Bicicleta aquática"],a:0,e:"O livro menciona o carro como principal meio de locomoção em muitas metrópoles brasileiras."},
-{t:"Mobilidade urbana",q:"Qual é um problema associado ao uso intenso de veículos?",o:["Emissão excessiva de gases nocivos","Redução de todos os deslocamentos","Desaparecimento das ruas","Fim dos congestionamentos"],a:0,e:"O texto relaciona os veículos à emissão excessiva de gases nocivos."},
-{t:"Mobilidade urbana",q:"Qual alternativa apresenta meios de transporte mencionados no capítulo?",o:["Ônibus, trens e metrôs","Somente barcos a vela","Somente aviões particulares","Apenas tratores agrícolas"],a:0,e:"O livro cita ônibus, trens, metrôs e outros meios de transporte."},
-{t:"Mobilidade urbana",q:"Por que o transporte coletivo pode ajudar a reduzir congestionamentos?",o:["Pode transportar muitas pessoas em menos veículos","Porque aumenta a quantidade de carros individuais","Porque impede todas as viagens","Porque substitui as ruas por estacionamentos"],a:0,e:"O exemplo visual compara o espaço ocupado por pessoas em carros e em um ônibus."},
-{t:"Acessibilidade",q:"O que significa acessibilidade no texto?",o:["Condições para que as pessoas utilizem espaços, transportes, informação e serviços","Apenas a existência de escadas","Somente a construção de avenidas","A quantidade de carros de uma cidade"],a:0,e:"A acessibilidade deve estar presente nos espaços, no meio físico, no transporte, na informação e comunicação e nos serviços."},
-{t:"Acessibilidade",q:"A acessibilidade é importante especialmente para…",o:["pessoas com deficiência ou mobilidade reduzida","somente motoristas","apenas turistas estrangeiros","somente comerciantes"],a:0,e:"O texto destaca a inclusão de pessoas com deficiência, como cadeirantes e pessoas com deficiência visual."},
-{t:"Acessibilidade",q:"Qual é um exemplo de recurso de acessibilidade mostrado no livro?",o:["Piso tátil","Barreira bloqueando a calçada","Escada sem alternativa","Calçada ocupada por veículos"],a:0,e:"As fotografias mostram piso tátil e guia rebaixada."},
-{t:"Acessibilidade",q:"A acessibilidade deve existir…",o:["em espaços, transportes, informação, comunicação e serviços","somente dentro de casa","apenas em aeroportos","somente em escolas particulares"],a:0,e:"O texto afirma que ela deve estar presente nos diferentes espaços e serviços."},
-{t:"Metrópoles mundiais",q:"O que aconteceu com a população urbana mundial ao longo do período apresentado?",o:["Cresceu e superou a população rural em 2007","Desapareceu","Permaneceu sempre menor que a rural","Não sofreu nenhuma mudança"],a:0,e:"O livro informa que, em 2007, a população urbana tornou-se maior que a população rural."},
-{t:"Metrópoles mundiais",q:"Segundo a projeção citada no livro, qual metrópole brasileira poderá ser o 9º maior aglomerado urbano em 2030?",o:["São Paulo","Manaus","Recife","Vitória"],a:0,e:"O texto cita a projeção de que São Paulo terá aproximadamente 24 milhões de habitantes em 2030."},
-{t:"Metrópoles mundiais",q:"Na tabela de 2018, qual aglomerado urbano aparece na primeira posição?",o:["Tóquio","São Paulo","Cairo","Mumbai"],a:0,e:"A tabela apresenta Tóquio, no Japão, em primeiro lugar."},
-{t:"Metrópoles mundiais",q:"Qual país é associado a Tóquio na tabela de aglomerados urbanos de 2018?",o:["Japão","China","Índia","Brasil"],a:0,e:"Tóquio aparece associada ao Japão."},
-{t:"Ambiente urbano",q:"Qual problema ambiental é associado à expansão urbana desordenada no exemplo de Salvador?",o:["Degradação ambiental em área de manguezal","Aumento natural de florestas preservadas","Desaparecimento de todas as construções","Formação de novas geleiras"],a:0,e:"O texto descreve degradação ambiental no manguezal do rio Passa Vaca, em Salvador."},
-{t:"Ambiente urbano",q:"O exemplo do rio Passa Vaca está localizado em qual estado?",o:["Bahia","Sergipe","Pernambuco","São Paulo"],a:0,e:"O rio Passa Vaca é apresentado no município de Salvador, na Bahia."},
-{t:"Ambiente urbano",q:"O que o livro aponta como uma causa da degradação ambiental do manguezal do rio Passa Vaca?",o:["Expansão urbana desordenada e falta de planejamento","Excesso de preservação","Ausência de crescimento urbano","Somente a construção de parques"],a:0,e:"O texto relaciona os impactos à falta de controle e ao grande crescimento urbano nas últimas décadas."},
-{t:"Ambiente urbano",q:"Qual é a importância ambiental do manguezal, tema de pesquisa proposto no livro?",o:["É um ambiente natural que deve ser conhecido e preservado","É uma área destinada somente a estacionamentos","Não possui importância ambiental","Deve ser sempre ocupado por prédios"],a:0,e:"O livro propõe pesquisar o manguezal e sua importância ambiental; a revisão destaca a necessidade de preservação do ambiente."},
-{t:"Revisão geral",q:"Qual alternativa relaciona corretamente cidade e função?",o:["Brasília — administrativa","Santos — universitária","São Carlos — portuária","Aparecida — industrial"],a:0,e:"Brasília é citada como cidade administrativa."},
-{t:"Revisão geral",q:"Qual alternativa relaciona corretamente conceito e significado?",o:["Mancha urbana — área ocupada por construções","Urbanização — desaparecimento das cidades","Rede urbana — cidade isolada sem conexões","Acessibilidade — impedimento de usar espaços"],a:0,e:"A mancha urbana é a área ocupada por construções urbanas."},
-{t:"Revisão geral",q:"Qual par de conceitos está corretamente relacionado?",o:["Metrópole — grande poder de atração e influência; rede urbana — conjunto de cidades conectadas","Periferia — sempre área rural; centro — sem serviços","APP — área para eliminar rios; urbanização — redução das cidades","Acessibilidade — barreiras; mobilidade — impossibilidade de deslocamento"],a:0,e:"As definições correspondem ao conteúdo das páginas estudadas."},
-{t:"Revisão geral",q:"Qual atitude ajuda a estudar o crescimento urbano usando as páginas do livro?",o:["Comparar imagens de satélite de diferentes anos","Ignorar as datas das imagens","Usar apenas uma foto sem comparação","Considerar que as cidades nunca mudam"],a:0,e:"A comparação de imagens permite observar mudanças na mancha urbana."},
-{t:"Revisão geral",q:"Qual alternativa mostra uma relação entre cidade e meio ambiente apresentada no livro?",o:["A expansão urbana desordenada pode degradar ambientes naturais","A expansão urbana sempre preserva todos os ambientes","As cidades não afetam os rios","O crescimento urbano não muda o território"],a:0,e:"O exemplo do rio Passa Vaca mostra impactos ambientais ligados à expansão urbana desordenada."}
-];
-const TOPICS = [...new Set(BANK.map(x=>x.t))];
-let chosenTopic="Todos os assuntos", queue=[], index=0, score=0, wrong=[], answered=[], missionNumber=1, sessionCorrect=0, sessionWrong=0, lastBatch=[], retryMode=false;
-const $=id=>document.getElementById(id);
-$("totalCount").textContent=BANK.length;
-function renderTopics(){
- const el=$("topics");el.innerHTML="";
- const all=document.createElement("button");all.className="topic active";all.innerHTML="🌈 Todos os assuntos<span>Revisão variada de todo o conteúdo</span>";all.onclick=()=>{chosenTopic="Todos os assuntos";document.querySelectorAll(".topic").forEach(x=>x.classList.remove("active"));all.classList.add("active")};el.appendChild(all);
- TOPICS.forEach((t,i)=>{const b=document.createElement("button");b.className="topic";b.innerHTML=`${["🏙️","🗺️","🌱","🚦","♿","🌍","📚"][i%7]} ${t}<span>${BANK.filter(q=>q.t===t).length} perguntas</span>`;b.onclick=()=>{chosenTopic=t;document.querySelectorAll(".topic").forEach(x=>x.classList.remove("active"));b.classList.add("active")};el.appendChild(b)});
-}
-function shuffle(a){let b=[...a];for(let i=b.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]]}return b}
-function start(all=false,onlyWrong=false){
- let base=onlyWrong?wrong.map(x=>x.question):BANK.filter(q=>all||chosenTopic==="Todos os assuntos"||q.t===chosenTopic);
- if(!base.length){alert("Não há questões para revisar agora. Muito bem!");return}
- queue=shuffle(base);index=0;score=0;wrong=[];answered=[];missionNumber=1;sessionCorrect=0;sessionWrong=0;retryMode=onlyWrong;
- $("home").classList.add("hide");$("results").classList.add("hide");$("missionDone").classList.add("hide");$("quiz").classList.remove("hide");showQuestion();
-}
-function showQuestion(){
- $("feedback").classList.add("hide");$("nextBtn").classList.add("hide");$("pauseBox").classList.add("hide");$("pauseBtn").classList.remove("hide");
- if(index>=queue.length){showResults();return}
- const q=queue[index];$("missionLabel").textContent=`MISSÃO ${Math.floor(index/5)+1} · ${Math.min(5,queue.length-(Math.floor(index/5)*5))} QUESTÕES`; $("topicLabel").textContent=q.t;
- $("questionCount").textContent=`Questão ${index+1} de ${queue.length}`;$("scoreLabel").textContent=`⭐ ${score} pontos`;
- $("progressFill").style.width=`${index/queue.length*100}%`;$("qText").textContent=q.q;
- const ans=$("answers");ans.innerHTML="";
- q.o.forEach((opt,i)=>{const b=document.createElement("button");b.className="answer";b.innerHTML=`<span class="letter">${String.fromCharCode(65+i)}</span><span>${opt}</span>`;b.onclick=()=>choose(i,b);ans.appendChild(b)});
-}
-function choose(choice,btn){
- if(answered.some(x=>x.q===queue[index]))return;
- const q=queue[index],isRight=choice===q.a;
- answered.push({q,choice,isRight});if(isRight){score+=10;sessionCorrect++}else{sessionWrong++;wrong.push({question:q,choice})}
- [...$("answers").children].forEach((b,i)=>{b.disabled=true;if(i===q.a)b.classList.add("correct");if(i===choice&&i!==q.a)b.classList.add("wrong")});
- const fb=$("feedback");fb.classList.remove("hide","good","bad");fb.classList.add(isRight?"good":"bad");
- fb.innerHTML=(isRight?"✅ Isso mesmo! +10 pontos!":"💡 Quase! Vamos aprender com essa.")+`<div class="explain">${q.e}</div>`;
- $("scoreLabel").textContent=`⭐ ${score} pontos`;$("nextBtn").classList.remove("hide");$("nextBtn").textContent=(index===queue.length-1)?"Ver resultado ➜":((index+1)%5===0?"Concluir missão 🎉":"Próxima questão ➜");
-}
-function next(){
- index++;
- if(index%5===0&&index<queue.length){showMissionDone();return}
- if(index>=queue.length){showResults();return}
- showQuestion();
-}
-function showMissionDone(){
- $("quiz").classList.add("hide");$("missionDone").classList.remove("hide");
- $("missionCorrect").textContent=sessionCorrect;$("missionWrong").textContent=sessionWrong;$("missionPoints").textContent=sessionCorrect*10;
- $("missionMessage").textContent=sessionWrong===0?"Missão perfeita! Você acertou todas desta etapa.":"Boa! Você concluiu mais uma etapa. As questões que errou vão aparecer no relatório final.";
- $("continueBtn").textContent=index>=queue.length?"Ver meu resultado":"Continuar para a próxima missão 🚀";
-}
-function continueMission(){if(index>=queue.length){showResults();return}missionNumber++;sessionCorrect=0;sessionWrong=0;$("missionDone").classList.add("hide");$("quiz").classList.remove("hide");showQuestion()}
-function showResults(){
- $("quiz").classList.add("hide");$("missionDone").classList.add("hide");$("results").classList.remove("hide");
- const total=answered.length,correct=answered.filter(x=>x.isRight).length,wrongN=total-correct,pct=total?Math.round(correct/total*100):0;
- $("finalCorrect").textContent=correct;$("finalWrong").textContent=wrongN;$("finalPercent").textContent=pct+"%";$("finalProgress").style.width=pct+"%";
- $("finalMessage").textContent=pct>=90?"🏆 Excelente! Você demonstrou ótimo domínio. Revise os erros para fixar ainda mais.":pct>=70?"🌟 Muito bom! Revise as questões erradas e tente outra rodada.":pct>=50?"💪 Você está avançando. Faça uma pausa e pratique as questões que apareceram abaixo.":"🌱 Cada tentativa ensina algo. Leia as explicações e treine novamente em pequenas etapas.";
- const list=$("wrongList");list.innerHTML="";
- if(!wrong.length)list.innerHTML="<div class='feedback good'>🎉 Nenhum erro nesta rodada! Parabéns!</div>";
- wrong.forEach((item,i)=>{const q=item.question;const div=document.createElement("div");div.className="review-item";div.innerHTML=`<div class="question-meta"><span>Erro ${i+1}</span><span>${q.t}</span></div><h3 style="margin-top:8px">${q.q}</h3><div class="wrongtext">Sua resposta: ${q.o[item.choice]}</div><div class="righttext">Resposta correta: ${q.o[q.a]}</div><p class="small">${q.e}</p>`;list.appendChild(div)});
- const medals=$("medals");medals.innerHTML="";const ms=pct>=90?["🏆 Mestre da Geografia","🔥 Super foco","⭐ Memória afiada"]:pct>=70?["🌟 Explorador dedicado","⭐ Bom progresso"]:pct>=50?["💪 Persistência","🌱 Aprendendo a cada rodada"]:["🌱 Primeira etapa concluída","💪 Coragem para tentar"];
- ms.forEach(m=>{const s=document.createElement("span");s.className="pill";s.textContent=m;medals.appendChild(s)});
- $("retryWrongBtn").classList.toggle("hide",!wrong.length);
-}
-$("startBtn").onclick=()=>start(false,false);$("allBtn").onclick=()=>start(true,false);$("nextBtn").onclick=next;
-$("pauseBtn").onclick=()=>{$("pauseBox").classList.remove("hide");$("pauseBtn").classList.add("hide")};$("resumeBtn").onclick=()=>{$("pauseBox").classList.add("hide");$("pauseBtn").classList.remove("hide")};
-$("continueBtn").onclick=continueMission;$("finishBtn").onclick=showResults;$("restartBtn").onclick=()=>{chosenTopic="Todos os assuntos";renderTopics();start(true,false)};$("homeBtn").onclick=()=>{$("results").classList.add("hide");$("home").classList.remove("hide")};$("retryWrongBtn").onclick=()=>start(true,true);
-renderTopics();
+(() => {
+  const $ = s => document.querySelector(s);
+  const rand = (a, b) => Math.floor(Math.random() * (b - a + 1)) + a;
+  const pick = a => a[Math.floor(Math.random() * a.length)];
+  const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+  const touch = matchMedia('(pointer: coarse)').matches;
+
+  /* ---------- Progresso ---------- */
+  const KEY = 'trilha-vezes-dividir-v1';
+  const DEF = { done: {}, unlockAll: false, sound: true };
+  function load() { try { const r = JSON.parse(localStorage.getItem(KEY)); if (r) return Object.assign(JSON.parse(JSON.stringify(DEF)), r); } catch (e) {} return JSON.parse(JSON.stringify(DEF)); }
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
+  let S = load();
+
+  /* ---------- Som ---------- */
+  let ac = null;
+  function tone(f, t = 0, d = .15, type = 'sine', v = .12) {
+    if (!S.sound) return;
+    try {
+      ac = ac || new (window.AudioContext || window.webkitAudioContext)();
+      const o = ac.createOscillator(), g = ac.createGain(), now = ac.currentTime + t;
+      o.type = type; o.frequency.value = f;
+      g.gain.setValueAtTime(.0001, now); g.gain.linearRampToValueAtTime(v, now + .02); g.gain.exponentialRampToValueAtTime(.0001, now + d);
+      o.connect(g); g.connect(ac.destination); o.start(now); o.stop(now + d + .05);
+    } catch (e) {}
+  }
+  const sfx = { ok: () => { tone(660); tone(990, .1, .2); }, bad: () => tone(210, 0, .25, 'triangle', .09), win: () => [523, 659, 784, 1046].forEach((f, i) => tone(f, i * .12, .25)), tap: () => tone(560, 0, .06, 'sine', .06) };
+
+  /* ---------- Ajudas de texto ---------- */
+  const tableList = (t, upto = 10) => Array.from({ length: upto }, (_, i) => t * (i + 1)).join(', ');
+  function strategy(t, n) {
+    if (n === 0) return 'Qualquer número vezes 0 dá 0.';
+    if (n === 1 || t === 1) return 'Qualquer número vezes 1 é ele mesmo.';
+    const m = {
+      2: `É o dobro: ${n} + ${n}.`,
+      3: `Faça o dobro (${n} + ${n} = ${2 * n}) e junte mais um ${n}.`,
+      4: `Dobro do dobro: ${n} → ${2 * n} → dobre de novo.`,
+      5: `Faça ${n} × 10 = ${10 * n} e pegue a metade.`,
+      6: `${n} × 5 = ${5 * n}. Junte mais um ${n}.`,
+      7: `${n} × 5 = ${5 * n} e ${n} × 2 = ${2 * n}. Some os dois.`,
+      8: `Dobre três vezes: ${n} → ${2 * n} → ${4 * n} → ?`,
+      9: `${n} × 10 = ${10 * n}. Tire um ${n}.`,
+      10: `Coloque um zero no fim do ${n}.`
+    };
+    let s = m[t] || `Conte de ${t} em ${t}.`;
+    if (t !== 10 && n > 1) s += `<br><span class="muted">Contando de ${t} em ${t}: ${tableList(t, n - 1)}, …</span>`;
+    return s;
+  }
+  function factHint(a, b) {
+    const t = [10, 2, 5, 1, 4, 3, 9, 6, 8, 7].find(x => x === a || x === b);
+    if (t === undefined) return `Pense em ${a} grupos de ${b}.`;
+    return strategy(t, t === a ? b : a);
+  }
+  const factsRow = t => `<div class="facts">${Array.from({ length: 10 }, (_, i) => `<span>${t} × ${i + 1} = <b>${t * (i + 1)}</b></span>`).join('')}</div>`;
+
+  /* ---------- Desenhos ---------- */
+  const dots = (n, cls = '') => Array.from({ length: n }, () => `<i class="dot ${cls}"></i>`).join('');
+  const groupsHTML = (a, b) => `<div class="groups">${Array.from({ length: a }, () => `<div class="box">${dots(b)}</div>`).join('')}</div>`;
+  const arrayHTML = (r, c, cls = '') => `<div class="arr ${cls}" style="grid-template-columns:repeat(${c},var(--sq))">${'<i></i>'.repeat(r * c)}</div>`;
+  const pileHTML = n => `<div class="pile">${dots(n)}</div>`;
+  const platesHTML = (k, q) => `<div class="plates">${Array.from({ length: k }, (_, i) => `<div class="plate"><div class="box">${dots(q)}</div><small>Amigo ${i + 1}</small></div>`).join('')}</div>`;
+  const groupsLeftHTML = (d, q, r) => `<div class="groups">${Array.from({ length: q }, () => `<div class="box">${dots(d)}</div>`).join('')}${r ? `<div class="box left">${dots(r, 'left')}</div>` : ''}</div>`;
+  function gridHTML(rows, W) {
+    return `<div class="g" style="grid-template-columns:repeat(${W},var(--cell))">${rows.map(r => r.cells.map(x => `<span class="cell ${x.c || ''} ${r.cls || ''}">${x.t ?? ''}</span>`).join('')).join('')}</div>`;
+  }
+
+  /* ---------- Tutor: conta armada (número × 1 algarismo) ---------- */
+  function mulItem(a, b) {
+    const A = String(a), R = String(a * b), n = A.length, W = Math.max(n, R.length) + 1;
+    const parts = [], snaps = [];
+    let carry = 0, res = {}, carries = {};
+    const snap = (note, hi) => snaps.push({ res: { ...res }, carries: { ...carries }, hi, note });
+    snap(`Comece pela direita: multiplique o ${b} pelo ${A[n - 1]}.`, n - 1);
+    for (let i = n - 1; i >= 0; i--) {
+      const d = +A[i], p = d * b, pos = n - 1 - i, total = p + carry;
+      parts.push({ ask: `${b} × ${d} = ?`, answer: p, hint: factHint(b, d) });
+      if (carry > 0) {
+        snap(`${b} × ${d} = ${p}. Agora some o ${carry} que subiu.`, i);
+        parts.push({ ask: `${p} + ${carry} = ?`, answer: total, hint: `Some ${p} com o ${carry} que está lá em cima.` });
+      }
+      if (i > 0) {
+        res[pos] = String(total % 10); carry = Math.floor(total / 10);
+        if (carry > 0) carries[i - 1] = String(carry);
+        snap(carry > 0
+          ? `Escreva o ${total % 10} embaixo e suba o ${carry} para a coluna da esquerda. Agora: ${b} × ${A[i - 1]}.`
+          : `Escreva o ${total} embaixo. Agora: ${b} × ${A[i - 1]}.`, i - 1);
+      } else {
+        const T = String(total);
+        for (let k = 0; k < T.length; k++) res[pos + (T.length - 1 - k)] = T[k];
+        snap(`Pronto! ${a} × ${b} = ${a * b}.`, -1);
+      }
+    }
+    const draw = k => {
+      const s = snaps[k], row = () => Array.from({ length: W }, () => ({ t: '', c: '' }));
+      const cr = row(); for (const i in s.carries) cr[W - n + +i] = { t: s.carries[i] };
+      const top = row(); for (let i = 0; i < n; i++) top[W - n + i] = { t: A[i], c: i === s.hi ? 'hl' : '' };
+      const br = row(); br[0] = { t: '×' }; br[W - 1] = { t: b, c: s.hi >= 0 ? 'hl' : '' };
+      const rr = row(); for (const p in s.res) rr[W - 1 - +p] = { t: s.res[p], c: 'ink' };
+      return `<div class="sheet">${gridHTML([{ cells: cr, cls: 'carry' }, { cells: top }, { cells: br, cls: 'under' }, { cells: rr }], W)}</div><p class="note">${s.note}</p>`;
+    };
+    return { title: `${a} × ${b} na conta armada`, parts, draw };
+  }
+
+  /* ---------- Tutor: dois algarismos × dois algarismos (em pedaços) ---------- */
+  function areaItem(a, b) {
+    const bt = Math.floor(b / 10) * 10, bu = b % 10;
+    const parts = [
+      { ask: `Primeiro pedaço: ${a} × ${bu} = ?`, answer: a * bu, hint: `Faça como na conta armada: ${bu} × ${a % 10} = ${bu * (a % 10)}, depois ${bu} × ${Math.floor(a / 10)} dezenas.` },
+      { ask: `Segundo pedaço: ${a} × ${bt} = ?`, answer: a * bt, hint: `Faça ${a} × ${bt / 10} e coloque um zero no fim.` },
+      { ask: `Agora junte: ${a * bu} + ${a * bt} = ?`, answer: a * b, hint: 'Some unidades com unidades, dezenas com dezenas, centenas com centenas.' }
+    ];
+    const draw = k => `<p class="eq">${a} × ${b} = ${a} × ${bt} + ${a} × ${bu}</p>
+      <div class="area"><div class="ab" style="flex:${bt}"><small>${a} × ${bt}</small><b>${k >= 2 ? a * bt : '?'}</b></div>
+      <div class="ab b2" style="flex:${Math.max(bu, 4)}"><small>${a} × ${bu}</small><b>${k >= 1 ? a * bu : '?'}</b></div></div>
+      <p class="eq big">${k >= 3 ? `${a} × ${b} = <b>${a * b}</b>` : '&nbsp;'}</p>`;
+    return { title: `${a} × ${b} em pedaços`, parts, draw };
+  }
+
+  /* ---------- Tutor: divisão na chave ---------- */
+  function divItem(N, d) {
+    const D = String(N), n = D.length, parts = [], snaps = [], rows = [];
+    let e = 0, cur = +D[0], quo = '';
+    while (cur < d && e < n - 1) { e++; cur = cur * 10 + +D[e]; }
+    const snap = (note, first = -1, hiLast = false) => snaps.push({ rows: rows.map(r => ({ ...r })), quo, note, first, hiLast });
+    snap((e > 0 ? `O ${D.slice(0, e)} é menor que ${d}, então pegamos o ${cur}. ` : `Começamos pelo ${cur}. `) + `Quantas vezes o ${d} cabe em ${cur}?`, e);
+    while (true) {
+      const q = Math.floor(cur / d), pr = q * d, rem = cur - pr;
+      parts.push({ ask: `Quantas vezes o ${d} cabe em ${cur}?`, answer: q, hint: `Tabuada do ${d}: ${tableList(d)}.<br>Pegue o maior resultado que não passa de ${cur}. Se nenhum cabe, a resposta é 0.` });
+      quo += q;
+      snap(`Escreva o ${q} no quociente. Agora multiplique: ${d} × ${q}.`, rows.length ? -1 : e, rows.length > 0);
+      parts.push({ ask: `${d} × ${q} = ?`, answer: pr, hint: factHint(d, q) });
+      rows.push({ num: String(pr), end: e, sub: true });
+      snap(`Escreva o ${pr} embaixo do ${cur}. Agora subtraia.`);
+      parts.push({ ask: `${cur} − ${pr} = ?`, answer: rem, hint: `Quanto falta para ir de ${pr} até ${cur}?` });
+      if (e < n - 1) {
+        e++; const nd = D[e]; cur = rem * 10 + +nd;
+        rows.push({ num: String(cur), end: e, bring: true });
+        snap(`Sobrou ${rem}. Desça o ${nd}: agora temos ${cur}. Quantas vezes o ${d} cabe em ${cur}?`, -1, true);
+      } else {
+        rows.push({ num: String(rem), end: e });
+        snap(`Fim! ${N} ÷ ${d} = ${quo}${rem ? `, e sobra ${rem}` : ''}. Confira: ${d} × ${quo}${rem ? ` + ${rem}` : ''} = ${N}.`);
+        break;
+      }
+    }
+    const draw = k => {
+      const s = snaps[k], W = n + 1, row = () => Array.from({ length: W }, () => ({ t: '', c: '' }));
+      const r0 = row(); for (let i = 0; i < n; i++) r0[i + 1] = { t: D[i], c: s.first >= 0 && i <= s.first ? 'hl' : '' };
+      const rs = [{ cells: r0 }];
+      s.rows.forEach((r, idx) => {
+        const R = row(), L = r.num.length, st = r.end + 2 - L, last = idx === s.rows.length - 1;
+        for (let j = 0; j < L; j++) R[st + j] = { t: r.num[j], c: (r.sub ? 'under ' : '') + (last && s.hiLast ? 'hl' : '') };
+        if (r.sub) R[st - 1] = { t: '−', c: 'under' };
+        if (r.bring && !(last && s.hiLast)) R[r.end + 1].c += ' brought';
+        rs.push({ cells: R });
+      });
+      return `<div class="sheet"><div class="chave"><div>${gridHTML(rs, W)}</div><div class="right"><div class="dv">${d}</div><div class="qt">${s.quo || '&nbsp;'}</div></div></div></div><p class="note">${s.note}</p>`;
+    };
+    return { title: `${N} ÷ ${d} na chave`, parts, draw };
+  }
+
+  /* ---------- Geradores de exercício ---------- */
+  function itGroups() {
+    const a = rand(2, 5), b = rand(2, 6);
+    return { title: `${a} grupos com ${b} em cada`, draw: () => groupsHTML(a, b), parts: [
+      { ask: `${Array(a).fill(b).join(' + ')} = ?`, answer: a * b, hint: `Conte de ${b} em ${b}: ${tableList(b, a - 1)}, …` },
+      { ask: `Então, ${a} × ${b} = ?`, answer: a * b, hint: 'É o mesmo número da conta de cima!' }] };
+  }
+  function itArray() {
+    const r = rand(2, 5), c = rand(3, 8);
+    return { title: `${r} linhas de ${c}`, draw: () => arrayHTML(r, c), parts: [
+      { ask: `Quanto é ${r} × ${c}?`, answer: r * c, hint: `Conte uma linha de cada vez: ${tableList(c, r - 1)}, …` },
+      { ask: `E quanto é ${c} × ${r}?`, answer: r * c, hint: 'Gire o retângulo na cabeça: a quantidade de quadradinhos não muda!' }] };
+  }
+  function itFact(tables) {
+    const t = pick(tables), n = rand(1, 10), [x, y] = Math.random() < .5 ? [t, n] : [n, t];
+    return { title: `Tabuada do ${t}`, draw: () => `<p class="expr">${x} × ${y}</p>`, parts: [{ ask: `${x} × ${y} = ?`, answer: x * y, hint: strategy(t, n) }] };
+  }
+  function it10() {
+    const a = rand(2, 9), b = rand(2, 9), type = rand(0, 3);
+    if (type === 0) return { title: 'Vezes 10', draw: () => `<p class="expr">${a} × 10</p>`, parts: [{ ask: `${a} × 10 = ?`, answer: a * 10, hint: `Coloque um zero no fim do ${a}.` }] };
+    if (type === 1) return { title: 'Vezes 100', draw: () => `<p class="expr">${a} × 100</p>`, parts: [{ ask: `${a} × 100 = ?`, answer: a * 100, hint: `Coloque dois zeros no fim do ${a}.` }] };
+    if (type === 2) { const m = rand(11, 49); return { title: 'Vezes 10', draw: () => `<p class="expr">${m} × 10</p>`, parts: [{ ask: `${m} × 10 = ?`, answer: m * 10, hint: `Coloque um zero no fim do ${m}.` }] }; }
+    return { title: 'Dezenas redondas', draw: () => `<p class="expr">${a} × ${b * 10}</p>`, parts: [{ ask: `${a} × ${b * 10} = ?`, answer: a * b * 10, hint: `Faça ${a} × ${b} = ? e coloque um zero no fim.` }] };
+  }
+  const itMulTutor = big => mulItem(big ? rand(102, 489) : rand(12, 98), rand(3, 9));
+  function itArea() { const a = rand(12, 39); let b = rand(12, 29); if (b % 10 === 0) b++; return areaItem(a, b); }
+  function itShare() {
+    const k = rand(2, 5), q = rand(2, 6), t = k * q, it = pick(['balas', 'figurinhas', 'bolinhas de gude', 'biscoitos']);
+    return { title: `Repartir ${t} ${it} igualmente entre ${k} amigos`, draw: kk => kk >= 1 ? platesHTML(k, q) : pileHTML(t), parts: [
+      { ask: `Quanto cada amigo recebe? (${t} ÷ ${k})`, answer: q, hint: `Dê um para cada amigo, rodada por rodada. Cada rodada gasta ${k}. Quantas rodadas até acabar?<br><span class="muted">Ou pense: ${k} × ? = ${t}</span>` }] };
+  }
+  function itFamily() {
+    const a = rand(2, 9), b = rand(2, 10), p = a * b;
+    if (Math.random() < .45) return { title: 'Família de fatos', draw: () => `<p class="story">Se <b>${a} × ${b} = ${p}</b>…</p>`, parts: [{ ask: `…então ${p} ÷ ${a} = ?`, answer: b, hint: 'A divisão desfaz a multiplicação. Olhe a conta de cima!' }] };
+    return { title: `Divisão pela tabuada do ${a}`, draw: () => `<p class="expr">${p} ÷ ${a}</p>`, parts: [{ ask: `${p} ÷ ${a} = ?`, answer: b, hint: `Pense: ${a} × ? = ${p}<br><span class="muted">Tabuada do ${a}: ${tableList(a)}</span>` }] };
+  }
+  function itRemainder() {
+    const d = rand(3, 6), q = rand(2, 6), r = rand(1, d - 1), n = d * q + r;
+    return { title: `${n} ÷ ${d}`, draw: k => k >= 1 ? groupsLeftHTML(d, q, r) : pileHTML(n), parts: [
+      { ask: `Quantos grupos de ${d} cabem em ${n}?`, answer: q, hint: `Tabuada do ${d}: ${tableList(d)}. Pegue o maior que não passa de ${n}.` },
+      { ask: 'Quanto sobra? (o resto)', answer: r, hint: `Faça ${n} − ${d * q}.` }] };
+  }
+  function itDivTutor(big) {
+    const d = rand(2, 9);
+    const q = big ? rand(Math.ceil(100 / d), Math.min(160, Math.floor((999 - d + 1) / d))) : rand(10, Math.floor((100 - d) / d));
+    const r = Math.random() < .5 ? 0 : rand(1, d - 1);
+    return divItem(d * q + r, d);
+  }
+  function itWord() {
+    if (Math.random() < .5) {
+      const a = rand(12, 35), b = rand(3, 8);
+      const t = pick([`Uma caixa tem ${a} lápis. Quantos lápis há em ${b} caixas?`, `Cada ingresso do cinema custa R$ ${a}. Quanto custam ${b} ingressos?`, `A escola tem ${b} salas com ${a} alunos em cada. Quantos alunos são ao todo?`]);
+      return { title: 'Problema', draw: () => `<p class="story">${t}</p>`, parts: [
+        { ask: 'Que conta resolve este problema?', choices: ['×', '÷'], answer: '×', hint: 'Tem grupos iguais e você quer o total? Então é ×.' },
+        { ask: `Calcule: ${a} × ${b} = ?`, answer: a * b, hint: `Quebre em pedaços: ${Math.floor(a / 10) * 10} × ${b} + ${a % 10} × ${b}.` }] };
+    }
+    const b = rand(3, 8), q = rand(4, 15), p = b * q;
+    const t = pick([`${p} alunos vão formar ${b} times iguais. Quantos alunos ficam em cada time?`, `Tenho ${p} figurinhas e colo ${b} em cada página. Quantas páginas eu completo?`, `R$ ${p} vão ser divididos igualmente entre ${b} irmãos. Quanto cada um recebe?`]);
+    return { title: 'Problema', draw: () => `<p class="story">${t}</p>`, parts: [
+      { ask: 'Que conta resolve este problema?', choices: ['×', '÷'], answer: '÷', hint: 'Você tem um total e quer repartir ou formar grupos? Então é ÷.' },
+      { ask: `Calcule: ${p} ÷ ${b} = ?`, answer: q, hint: `Pense: ${b} × ? = ${p}<br><span class="muted">Tabuada do ${b}: ${tableList(b, Math.max(10, q))}</span>` }] };
+  }
+
+  /* ---------- Widgets das lições ---------- */
+  const stepper = (id, label, val) => `<div class="stp"><span>${label}</span><button data-s="${id}" data-d="-1" aria-label="Menos">−</button><b>${val}</b><button data-s="${id}" data-d="1" aria-label="Mais">+</button></div>`;
+  function wGroups(el) {
+    let a = 3, b = 4;
+    const draw = () => { el.innerHTML = `<div class="ctrls">${stepper('a', 'Grupos', a)}${stepper('b', 'Em cada grupo', b)}</div>${groupsHTML(a, b)}
+      <p class="eq">${Array(a).fill(b).join(' + ')} = <b>${a * b}</b></p><p class="eq big"><b>${a} × ${b} = ${a * b}</b></p>
+      <p class="muted">Lemos “${a} vezes ${b}”, que quer dizer ${a} grupos de ${b}.</p>`; };
+    el.onclick = e => { const t = e.target.closest('[data-s]'); if (!t) return; sfx.tap(); if (t.dataset.s === 'a') a = clamp(a + +t.dataset.d, 1, 6); else b = clamp(b + +t.dataset.d, 1, 9); draw(); };
+    draw();
+  }
+  function wArray(el) {
+    let r = 3, c = 5, msg = '';
+    const draw = () => { el.innerHTML = `<div class="ctrls">${stepper('r', 'Linhas', r)}${stepper('c', 'Colunas', c)}<button class="btn" data-rot="1">Girar ↻</button></div>
+      ${arrayHTML(r, c)}<p class="eq big"><b>${r} × ${c} = ${r * c}</b></p><p class="muted">${msg || `${r} linhas com ${c} quadradinhos em cada.`}</p>`; };
+    el.onclick = e => {
+      if (e.target.closest('[data-rot]')) { [r, c] = [c, r]; msg = `Girou! Agora é ${r} × ${c} e continua dando ${r * c}.`; sfx.tap(); return draw(); }
+      const t = e.target.closest('[data-s]'); if (!t) return; sfx.tap(); msg = '';
+      if (t.dataset.s === 'r') r = clamp(r + +t.dataset.d, 1, 8); else c = clamp(c + +t.dataset.d, 1, 10); draw();
+    };
+    draw();
+  }
+  function wTable(el, mode) {
+    let sel = mode === 'missing' ? [7, 8] : [6, 7];
+    const known = [1, 2, 3, 4, 5, 6, 9, 10];
+    const draw = () => {
+      let g = '<span>×</span>' + Array.from({ length: 10 }, (_, i) => `<span>${i + 1}</span>`).join('');
+      for (let a = 1; a <= 10; a++) {
+        g += `<span>${a}</span>`;
+        for (let b = 1; b <= 10; b++) {
+          let c = '';
+          if (sel && sel[0] === a && sel[1] === b) c = 'sel';
+          else if (mode === 'missing' && !known.includes(a) && !known.includes(b)) c = 'new';
+          else if (sel && (sel[0] === a || sel[1] === b) && (a <= sel[0] && b <= sel[1])) c = 'inline';
+          g += `<button class="${c}" data-a="${a}" data-b="${b}" aria-label="${a} vezes ${b}">${a * b}</button>`;
+        }
+      }
+      const [a, b] = sel;
+      el.innerHTML = `<div class="ttable"><div class="tgrid">${g}</div></div>
+        <div class="tdetail"><p class="eq big"><b>${a} × ${b} = ${a * b}</b></p>${arrayHTML(a, b, 'small')}<p>${factHint(a, b)}</p></div>`;
+    };
+    el.onclick = e => { const t = e.target.closest('[data-a]'); if (!t) return; sfx.tap(); sel = [+t.dataset.a, +t.dataset.b]; draw(); };
+    draw();
+  }
+  function wDist(el, N0, K0) {
+    let N = N0, K = K0, each = 0;
+    const left = () => N - each * K;
+    const draw = () => {
+      const l = left(), can = l >= K;
+      let status;
+      if (each === 0) status = `Aperte “Dar uma rodada”: cada amigo ganha 1 bala.`;
+      else if (can) status = `Cada um tem ${each}. Ainda sobram ${l} na mesa. Dá mais uma rodada!`;
+      else status = `Acabaram as rodadas! Cada amigo ficou com <b>${each}</b>${l ? ` e sobrou <b>${l}</b>` : ''}.<br><b>${N} ÷ ${K} = ${each}</b>${l ? `, resto ${l}` : ''}.`;
+      el.innerHTML = `<div class="ctrls">${stepper('n', 'Balas', N)}${stepper('k', 'Amigos', K)}</div>
+        <p class="muted">Na mesa: ${l}</p>${pileHTML(l)}${platesHTML(K, each)}
+        <p class="note">${status}</p>
+        <div class="row"><button class="btn primary" data-go="1" ${can ? '' : 'disabled'}>Dar uma rodada</button><button class="btn" data-reset="1">Recomeçar</button></div>`;
+    };
+    el.onclick = e => {
+      if (e.target.closest('[data-go]')) { if (left() >= K) { each++; tone(500 + each * 40, 0, .08); } return draw(); }
+      if (e.target.closest('[data-reset]')) { each = 0; return draw(); }
+      const t = e.target.closest('[data-s]'); if (!t) return; sfx.tap(); each = 0;
+      if (t.dataset.s === 'n') N = clamp(N + +t.dataset.d, 2, 40); else K = clamp(K + +t.dataset.d, 2, 6); draw();
+    };
+    draw();
+  }
+
+  /* ---------- Fases ---------- */
+  const MODS = [
+    { id: 'mul', name: 'Multiplicação', desc: 'Juntar grupos iguais', c: 'var(--mul)', soft: 'var(--mul-soft)' },
+    { id: 'div', name: 'Divisão', desc: 'Repartir em partes iguais', c: 'var(--div)', soft: 'var(--div-soft)' },
+    { id: 'fim', name: 'Desafio final', desc: 'Tudo junto', c: 'var(--fim)', soft: 'var(--fim-soft)' }
+  ];
+  const ALL = [2, 3, 4, 5, 6, 7, 8, 9];
+  const LESSONS = [
+    { id: 'm1', mod: 'mul', title: 'Grupos iguais', sub: 'O que é multiplicar', count: 4, gen: itGroups, slides: [
+      { h: 'Multiplicar é juntar grupos iguais', html: `<p>Imagine 3 pratos com 4 biscoitos em cada um. Dá para somar: 4 + 4 + 4 = 12.</p><p>Multiplicar é um jeito rápido de escrever essa soma: <b>3 × 4 = 12</b>. O sinal <b>×</b> quer dizer “grupos de”.</p><p class="tip">Mexa nos botões e veja a soma virar multiplicação.</p>`, w: wGroups }] },
+    { id: 'm2', mod: 'mul', title: 'Linhas e colunas', sub: 'A ordem não muda o resultado', count: 4, gen: itArray, slides: [
+      { h: 'Arrumando em linhas e colunas', html: `<p>Quando os grupos ficam um embaixo do outro, formam um retângulo. 3 linhas de 5 é <b>3 × 5</b>.</p><p>Aperte <b>Girar</b>: o retângulo vira 5 linhas de 3, mas a quantidade é a mesma. Então <b>3 × 5 = 5 × 3</b>.</p><p class="tip">Isso corta a tabuada pela metade: se você sabe 3 × 8, já sabe 8 × 3.</p>`, w: wArray }] },
+    { id: 'm3', mod: 'mul', title: 'Tabuadas do 2, 5 e 10', sub: 'As mais fáceis primeiro', count: 6, gen: () => itFact([2, 5, 10]), slides: [
+      { h: 'Vezes 2 é o dobro', html: `<p>Multiplicar por 2 é pegar o número duas vezes. 7 × 2 = 7 + 7 = 14.</p>${factsRow(2)}` },
+      { h: 'Vezes 10: coloque um zero', html: `<p>Para multiplicar por 10, escreva um zero no fim do número. 6 × 10 = 60.</p>${factsRow(10)}` },
+      { h: 'Vezes 5 é a metade do vezes 10', html: `<p>8 × 10 = 80. A metade de 80 é 40. Então <b>8 × 5 = 40</b>.</p><p>Os resultados da tabuada do 5 sempre terminam em 0 ou 5, como os minutos do relógio.</p>${factsRow(5)}` }] },
+    { id: 'm4', mod: 'mul', title: 'Tabuadas do 3, 4, 6 e 9', sub: 'Com truques', count: 6, gen: () => itFact([3, 4, 6, 9]), slides: [
+      { h: 'Vezes 4: dobro do dobro', html: `<p>Para fazer 7 × 4, dobre o 7 (14) e dobre de novo (28).</p>${factsRow(4)}` },
+      { h: 'Vezes 3: dobro e mais um', html: `<p>Para fazer 6 × 3: o dobro de 6 é 12, mais um 6 dá <b>18</b>.</p>${factsRow(3)}` },
+      { h: 'Vezes 6: vezes 5 e mais um', html: `<p>Para fazer 7 × 6: 7 × 5 = 35, mais um 7 dá <b>42</b>.</p>${factsRow(6)}` },
+      { h: 'Vezes 9: vezes 10 e tira um', html: `<p>Para fazer 7 × 9: 7 × 10 = 70, tira um 7 e dá <b>63</b>.</p><p><b>Truque dos dedos:</b> abra as duas mãos. Para 9 × 4, abaixe o 4º dedo. Ficam 3 dedos antes e 6 depois: <b>36</b>.</p>${factsRow(9)}` }] },
+    { id: 'm5', mod: 'mul', title: 'Tabuadas do 7 e 8', sub: 'Só faltam 4 contas novas', count: 6, gen: i => itFact(i % 2 ? [7, 8] : ALL), slides: [
+      { h: 'Você já sabe quase a tabela toda', html: `<p>Com as tabuadas do 1, 2, 3, 4, 5, 6, 9 e 10, quase toda a tabela já está feita. As casas amarelas são as únicas novas: <b>7 × 7, 7 × 8, 8 × 7 e 8 × 8</b>.</p><p class="muted">Toque em qualquer casa para ver a conta.</p>`, w: el => wTable(el, 'missing') },
+      { h: 'Vezes 8: dobre três vezes', html: `<p>8 × 7: dobre o 7 (14), dobre de novo (28), dobre mais uma vez (<b>56</b>).</p>${factsRow(8)}` },
+      { h: 'Vezes 7: vezes 5 mais vezes 2', html: `<p>7 × 7: 7 × 5 = 35 e 7 × 2 = 14. Juntando, 35 + 14 = <b>49</b>.</p><p class="tip">Para lembrar: 5, 6, 7, 8 → <b>56 = 7 × 8</b></p>${factsRow(7)}` }] },
+    { id: 'm6', mod: 'mul', title: 'Vezes 10, 100 e dezenas', sub: 'Os zeros ajudam', count: 5, gen: it10, slides: [
+      { h: 'Vezes 10 e vezes 100', html: `<p><b>× 10</b>: coloque um zero. 34 × 10 = 340.</p><p><b>× 100</b>: coloque dois zeros. 7 × 100 = 700.</p>` },
+      { h: 'Dezenas redondas', html: `<p>Para fazer 3 × 40, esqueça o zero um pouquinho: 3 × 4 = 12. Agora devolva o zero: <b>120</b>.</p><p>6 × 50: 6 × 5 = 30, devolve o zero: <b>300</b>.</p>` }] },
+    { id: 'm7', mod: 'mul', title: 'Conta armada', sub: 'Número grande vezes um algarismo', count: 3, gen: i => itMulTutor(i >= 2), slides: [
+      { h: 'Quando a tabuada não chega', html: `<p>Para 47 × 6, a gente quebra o 47 em <b>4 dezenas</b> e <b>7 unidades</b> e multiplica um pedaço de cada vez, sempre começando pela direita.</p><ol class="steplist"><li>6 × 7 = 42. Escreve o <b>2</b> embaixo e o <b>4 sobe</b> para a coluna das dezenas.</li><li>6 × 4 = 24. Soma o 4 que subiu: 24 + 4 = <b>28</b>.</li><li>Resultado: <b>282</b>.</li></ol>`, w: el => { el.innerHTML = mulItem(47, 6).draw(3); } },
+      { h: 'Agora é com você', html: `<p>Nos exercícios, eu mostro a conta no papel quadriculado e pergunto um passo de cada vez. O número amarelo é o que você está usando agora.</p><p class="tip">O número azul pequeno lá em cima é o que “subiu”.</p>` }] },
+    { id: 'm8', mod: 'mul', title: 'Dois números grandes', sub: 'Quebrando em pedaços', count: 3, gen: itArea, slides: [
+      { h: 'Multiplicar em pedaços', html: `<p>23 × 14 parece difícil. Mas 14 é 10 + 4. Então dá para fazer em dois pedaços:</p><ol class="steplist"><li>23 × 4 = 92</li><li>23 × 10 = 230</li><li>92 + 230 = <b>322</b></li></ol><p>O retângulo mostra os dois pedaços lado a lado.</p>`, w: el => { el.innerHTML = areaItem(23, 14).draw(3); } }] },
+    { id: 'd1', mod: 'div', title: 'Repartir igual', sub: 'O que é dividir', count: 4, gen: itShare, slides: [
+      { h: 'Dividir é repartir em partes iguais', html: `<p>Você tem 12 balas para dar a 3 amigos, e todo mundo tem que ganhar igual. Dê uma bala para cada um, rodada por rodada, até não dar mais.</p><p>Cada amigo fica com 4. Escrevemos <b>12 ÷ 3 = 4</b>.</p>`, w: el => wDist(el, 12, 3) }] },
+    { id: 'd2', mod: 'div', title: 'A conta ao contrário', sub: 'Divisão desfaz a multiplicação', count: 6, gen: itFamily, slides: [
+      { h: 'Multiplicação e divisão são da mesma família', html: `<p>Com os números 3, 4 e 12 dá para montar quatro contas:</p>`, w: el => { el.innerHTML = `<div class="tri"><div class="top">12</div><div class="base"><span>3</span><span>4</span></div></div><div class="fam"><span>3 × 4 = 12</span><span>4 × 3 = 12</span><span>12 ÷ 3 = 4</span><span>12 ÷ 4 = 3</span></div><p class="tip">Para fazer 35 ÷ 5, pergunte: 5 vezes quanto dá 35? Resposta: 7.</p>`; } }] },
+    { id: 'd3', mod: 'div', title: 'Quando sobra', sub: 'O resto', count: 4, gen: itRemainder, slides: [
+      { h: 'Às vezes não dá certinho', html: `<p>14 balas para 4 amigos: depois de 3 rodadas, cada um tem 3 e sobram 2 na mesa. Não dá para outra rodada, porque faltariam balas.</p><p>Escrevemos <b>14 ÷ 4 = 3, resto 2</b>.</p><p class="tip">O resto é sempre menor que o número de amigos.</p>`, w: el => wDist(el, 14, 4) }] },
+    { id: 'd4', mod: 'div', title: 'Divisão na chave', sub: 'Números grandes', count: 3, gen: i => itDivTutor(i >= 2), slides: [
+      { h: 'Os nomes da conta', html: `<p>Na chave, cada número tem um nome:</p>`, w: el => { el.innerHTML = `${divItem(84, 4).draw(6)}<div class="names"><div><b>84</b>dividendo: o total</div><div><b>4</b>divisor: em quantos repartir</div><div><b>21</b>quociente: o resultado</div><div><b>0</b>resto: o que sobrou</div></div>`; } },
+      { h: 'Quatro passos que se repetem', html: `<ol class="steplist"><li><b>Divide:</b> quantas vezes o divisor cabe no número?</li><li><b>Multiplica:</b> divisor vezes o que você achou.</li><li><b>Subtrai:</b> tira esse resultado do número.</li><li><b>Desce:</b> traz o próximo algarismo para baixo.</li></ol><p class="tip">Divide, Multiplica, Subtrai, Desce. E repete até acabarem os algarismos!</p><p>Nos exercícios eu pergunto um passo de cada vez.</p>` }] },
+    { id: 'd5', mod: 'div', title: 'Vezes ou dividir?', sub: 'Problemas do dia a dia', count: 4, gen: itWord, slides: [
+      { h: 'Qual conta eu faço?', html: `<p><b>×</b> quando você tem grupos iguais e quer saber o <b>total</b>. Exemplo: 5 caixas com 12 lápis.</p><p><b>÷</b> quando você tem o total e quer <b>repartir</b> ou saber <b>quantos grupos</b> formam. Exemplo: 60 lápis em 5 caixas iguais.</p><p class="tip">Pergunte: eu sei o total? Se sim, provavelmente é divisão.</p>` }] },
+    { id: 'f1', mod: 'fim', title: 'Desafio final', sub: 'Um pouco de tudo', count: 6, gen: i => [() => itFact(ALL), () => itMulTutor(false), itWord, itRemainder, () => itDivTutor(false), it10][i % 6](), slides: [
+      { h: 'Hora de mostrar o que aprendeu', html: `<p>Neste desafio aparece de tudo: tabuada, conta armada, divisão na chave, resto e problemas.</p><p>Vá com calma. Se precisar, a tabela da tabuada está lá em cima, no botão <b>Tabuada</b>.</p>` }] }
+  ];
+  const QUICK = { id: 'quick', mod: 'mul', title: 'Treino rápido de tabuada', count: 10, gen: () => itFact(ALL), slides: [] };
+
+  const modOf = L => MODS.find(m => m.id === L.mod);
+  const unlocked = i => S.unlockAll || i === 0 || !!S.done[LESSONS[i - 1].id];
+  const totalStars = () => Object.values(S.done).reduce((a, b) => a + b, 0);
+  const nextIndex = () => { const i = LESSONS.findIndex(l => !S.done[l.id]); return i < 0 ? -1 : i; };
+
+  /* ---------- Telas ---------- */
+  const SCREENS = ['map', 'lesson', 'practice', 'finish', 'table'];
+  let lastScreen = 'map';
+  function show(id) { SCREENS.forEach(s => { $('#' + s).hidden = s !== id; }); window.scrollTo(0, 0); }
+  function updateTop() {
+    $('#starTotal').textContent = totalStars();
+    $('#btnSound').textContent = S.sound ? 'Som ligado' : 'Som desligado';
+    $('#btnSound').setAttribute('aria-pressed', String(S.sound));
+  }
+  const starsHTML = n => '★'.repeat(n) + `<span class="off">${'★'.repeat(3 - n)}</span>`;
+
+  function renderMap() {
+    updateTop();
+    const doneCount = LESSONS.filter(l => S.done[l.id]).length, ni = nextIndex();
+    $('#mapBar').style.width = (doneCount / LESSONS.length * 100) + '%';
+    $('#mapCount').textContent = `${doneCount} de ${LESSONS.length} fases`;
+    if (ni < 0) { $('#heroTitle').textContent = 'Você completou a trilha!'; $('#heroText').textContent = 'Agora você sabe multiplicar e dividir. Refaça qualquer fase para ganhar mais estrelas ou use o treino rápido.'; $('#btnContinue').hidden = true; }
+    else {
+      $('#btnContinue').hidden = false;
+      $('#btnContinue').textContent = doneCount === 0 ? 'Começar a fase 1' : `Continuar: ${LESSONS[ni].title}`;
+      $('#heroTitle').textContent = doneCount === 0 ? 'Vamos aprender a multiplicar e dividir' : 'Bom te ver de novo!';
+      $('#heroText').textContent = doneCount === 0 ? 'Cada fase tem uma explicação curtinha e depois alguns exercícios. Errar não tira ponto: a dica aparece e você tenta de novo.' : `Você já tem ${totalStars()} estrelas. A próxima fase é “${LESSONS[ni].title}”.`;
+    }
+    $('#btnUnlock').textContent = S.unlockAll ? 'Voltar a liberar fase por fase' : 'Liberar todas as fases';
+    $('#mods').innerHTML = MODS.map(m => {
+      const items = LESSONS.map((l, i) => ({ l, i })).filter(x => x.l.mod === m.id);
+      return `<div class="mod"><div class="modhead"><h2>${m.name}</h2><span>${m.desc}</span></div><div class="path">${items.map(({ l, i }) => {
+        const ok = unlocked(i), st = S.done[l.id] || 0;
+        return `<button class="node ${st ? 'done' : ''} ${i === ni && ok ? 'next' : ''}" data-l="${i}" ${ok ? '' : 'disabled'} style="--c:${m.c};--soft:${m.soft}">
+          <span class="num">${st ? '✓' : i + 1}</span><span><b>${l.title}</b><small>${l.sub}</small></span>
+          ${ok ? `<span class="st" aria-label="${st} de 3 estrelas">${starsHTML(st)}</span>` : '<span class="lock">bloqueada</span>'}</button>`;
+      }).join('')}</div></div>`;
+    }).join('');
+  }
+
+  /* ---------- Lição ---------- */
+  let LS = null;
+  function openLesson(i) { const L = LESSONS[i]; if (!L.slides.length) return startPractice(L, i); LS = { L, i, s: 0 }; show('lesson'); renderSlide(); }
+  function renderSlide() {
+    const { L, s } = LS, sl = L.slides[s], m = modOf(L);
+    $('#lCard').style.setProperty('--c', m.c);
+    $('#lMod').textContent = `${m.name} · Fase ${LS.i + 1}: ${L.title}`;
+    $('#lH').textContent = sl.h;
+    $('#lBody').innerHTML = sl.html;
+    const w = $('#lW'); w.innerHTML = ''; w.onclick = null;
+    if (sl.w) sl.w(w);
+    $('#lCount').textContent = `Explicação ${s + 1} de ${L.slides.length}`;
+    $('#lBar').style.width = ((s + 1) / (L.slides.length + 1) * 100) + '%';
+    $('#lPrev').disabled = s === 0;
+    $('#lNext').textContent = s === L.slides.length - 1 ? 'Começar os exercícios' : 'Próximo';
+  }
+
+  /* ---------- Exercícios ---------- */
+  let P = null;
+  function makeItems(L) {
+    const out = [], keys = new Set();
+    for (let i = 0; i < L.count; i++) {
+      let it, t = 0;
+      do { it = L.gen(i); t++; } while (keys.has(it.title + it.parts[0].ask) && t < 15);
+      keys.add(it.title + it.parts[0].ask); out.push(it);
+    }
+    return out;
+  }
+  function startPractice(L, i) { P = { L, idx: i, items: makeItems(L), i: 0, k: 0, err: 0, pe: 0, busy: false }; show('practice'); renderItem(); }
+  function renderItem() {
+    const it = P.items[P.i], m = modOf(P.L);
+    $('#pCard').style.setProperty('--c', m.c);
+    $('#pCount').textContent = `Exercício ${P.i + 1} de ${P.items.length}`;
+    $('#pBar').style.width = (P.i / P.items.length * 100) + '%';
+    $('#pTitle').textContent = it.title;
+    $('#pFb').textContent = ''; $('#pFb').className = 'fb';
+    renderPart();
+  }
+  function renderPart() {
+    const it = P.items[P.i], part = it.parts[P.k];
+    $('#pVis').innerHTML = it.draw ? it.draw(P.k) : '';
+    const step = it.parts.length > 1 ? `<span class="pstep">Passo ${P.k + 1} de ${it.parts.length}</span>` : '';
+    $('#pAsk').innerHTML = step + part.ask;
+    $('#pHint').hidden = true; $('#pHint').innerHTML = part.hint || '';
+    $('#pHintBtn').hidden = !part.hint;
+    const isChoice = !!part.choices;
+    $('#pChoices').hidden = !isChoice; $('#pInputWrap').hidden = isChoice; $('#keypad').hidden = isChoice;
+    if (isChoice) $('#pChoices').innerHTML = part.choices.map(c => `<button data-c="${c}" aria-label="${c === '×' ? 'Multiplicação' : 'Divisão'}">${c}</button>`).join('');
+    else { const inp = $('#pIn'); inp.value = ''; inp.classList.remove('wrong'); if (!touch) inp.focus({ preventScroll: true }); }
+  }
+  function advance(delayDone) {
+    const it = P.items[P.i];
+    P.k++; P.pe = 0;
+    if (P.k >= it.parts.length) {
+      P.busy = true;
+      $('#pVis').innerHTML = it.draw ? it.draw(P.k) : '';
+      $('#pHint').hidden = true; $('#pHintBtn').hidden = true;
+      setTimeout(() => { P.busy = false; P.i++; P.k = 0; if (P.i >= P.items.length) finish(); else renderItem(); }, delayDone);
+    } else renderPart();
+  }
+  const PRAISE = ['Isso!', 'Certinho!', 'Mandou bem!', 'Perfeito!', 'Boa!', 'Exatamente!'];
+  const SOFT = ['Quase! Veja a dica.', 'Ainda não. Tenta de novo com a dica.', 'Tudo bem errar. Olha a dica e tenta outra vez.'];
+  function submit(v) {
+    if (P.busy) return;
+    const it = P.items[P.i], part = it.parts[P.k];
+    if (v === '' || v == null) return;
+    const ok = part.choices ? v === part.answer : Number(v) === part.answer;
+    const fb = $('#pFb');
+    if (ok) {
+      sfx.ok(); fb.className = 'fb good';
+      fb.textContent = P.k === it.parts.length - 1 ? (P.pe ? 'Conseguiu! Tentar de novo funciona.' : pick(PRAISE)) : pick(PRAISE);
+      advance(it.parts.length > 2 ? 2200 : 1200);
+    } else {
+      sfx.bad(); P.err++; P.pe++;
+      if (P.pe >= 3) {
+        fb.className = 'fb soft'; fb.textContent = `A resposta é ${part.answer}. Vamos seguir.`;
+        P.busy = true;
+        setTimeout(() => { P.busy = false; advance(2200); }, 1800);
+      } else {
+        fb.className = 'fb soft'; fb.textContent = pick(SOFT);
+        if (part.hint) $('#pHint').hidden = false;
+        if (part.choices) { const b = [...document.querySelectorAll('#pChoices button')].find(x => x.dataset.c === v); if (b) { b.classList.add('wrong'); b.disabled = true; } }
+        else { const inp = $('#pIn'); inp.classList.remove('wrong'); void inp.offsetWidth; inp.classList.add('wrong'); inp.value = ''; if (!touch) inp.focus({ preventScroll: true }); }
+      }
+    }
+  }
+  function finish() {
+    const L = P.L, stars = P.err <= 1 ? 3 : P.err <= 4 ? 2 : 1, m = modOf(L);
+    if (L.id !== 'quick') { S.done[L.id] = Math.max(S.done[L.id] || 0, stars); save(); }
+    updateTop(); sfx.win(); show('finish');
+    $('#fMod').textContent = L.id === 'quick' ? 'Treino rápido' : `${m.name} · Fase ${P.idx + 1}`;
+    $('#fMod').style.color = m.c;
+    $('#fTitle').textContent = stars === 3 ? `${L.title}: perfeito!` : `${L.title}: completa!`;
+    $('#fStars').innerHTML = [...Array(3)].map((_, i) => i < stars ? `<span style="animation-delay:${i * .15}s">★</span>` : '<span class="off">★</span>').join('');
+    $('#fStars').setAttribute('aria-label', `${stars} de 3 estrelas`);
+    $('#fText').textContent = stars === 3 ? 'Você acertou quase tudo de primeira. Que cabeça boa!' : stars === 2 ? 'Muito bem! Você usou as dicas e chegou lá.' : 'Você não desistiu, e é assim que se aprende. Faça de novo quando quiser para ganhar mais estrelas.';
+    const hasNext = L.id !== 'quick' && P.idx + 1 < LESSONS.length;
+    $('#fNext').hidden = !hasNext;
+    if (hasNext) $('#fNext').textContent = `Próxima fase: ${LESSONS[P.idx + 1].title}`;
+  }
+
+  /* ---------- Eventos ---------- */
+  $('#mods').addEventListener('click', e => { const b = e.target.closest('[data-l]'); if (b && !b.disabled) { sfx.tap(); openLesson(+b.dataset.l); } });
+  $('#btnContinue').addEventListener('click', () => { const i = nextIndex(); if (i >= 0) openLesson(i); });
+  $('#btnQuick').addEventListener('click', () => startPractice(QUICK, -1));
+  $('#goMap').addEventListener('click', () => { show('map'); renderMap(); });
+  $('#goTable').addEventListener('click', () => { lastScreen = SCREENS.find(s => !$('#' + s).hidden) || 'map'; show('table'); wTable($('#tW'), ''); });
+  $('#tBack').addEventListener('click', () => { if (lastScreen === 'table' || lastScreen === 'finish') lastScreen = 'map'; show(lastScreen); if (lastScreen === 'map') renderMap(); });
+  $('#btnSound').addEventListener('click', () => { S.sound = !S.sound; save(); updateTop(); sfx.tap(); });
+  $('#lQuit').addEventListener('click', () => { show('map'); renderMap(); });
+  $('#lPrev').addEventListener('click', () => { if (LS.s > 0) { LS.s--; renderSlide(); window.scrollTo(0, 0); } });
+  $('#lNext').addEventListener('click', () => { if (LS.s < LS.L.slides.length - 1) { LS.s++; renderSlide(); window.scrollTo(0, 0); } else startPractice(LS.L, LS.i); });
+  $('#pQuit').addEventListener('click', () => { show('map'); renderMap(); });
+  $('#pHintBtn').addEventListener('click', () => { sfx.tap(); $('#pHint').hidden = false; });
+  $('#pChoices').addEventListener('click', e => { const b = e.target.closest('[data-c]'); if (b && !b.disabled) submit(b.dataset.c); });
+  $('#keypad').addEventListener('click', e => {
+    const b = e.target.closest('[data-k]'); if (!b) return;
+    const inp = $('#pIn'), k = b.dataset.k;
+    if (k === 'ok') return submit(inp.value.trim());
+    if (k === 'del') inp.value = inp.value.slice(0, -1);
+    else if (inp.value.length < 5) { inp.value += k; tone(480, 0, .04, 'sine', .04); }
+  });
+  $('#pIn').addEventListener('input', e => { e.target.value = e.target.value.replace(/\D/g, '').slice(0, 5); });
+  $('#pIn').addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); submit(e.target.value.trim()); } });
+  if (touch) $('#pIn').setAttribute('inputmode', 'none');
+  $('#fNext').addEventListener('click', () => openLesson(P.idx + 1));
+  $('#fRetry').addEventListener('click', () => { if (P.L.id === 'quick') startPractice(QUICK, -1); else startPractice(P.L, P.idx); });
+  $('#fMap').addEventListener('click', () => { show('map'); renderMap(); });
+  $('#btnUnlock').addEventListener('click', () => { S.unlockAll = !S.unlockAll; save(); renderMap(); });
+  $('#btnReset').addEventListener('click', () => { $('#btnReset').hidden = true; $('#btnResetYes').hidden = false; $('#btnResetNo').hidden = false; });
+  const resetUI = () => { $('#btnReset').hidden = false; $('#btnResetYes').hidden = true; $('#btnResetNo').hidden = true; };
+  $('#btnResetNo').addEventListener('click', resetUI);
+  $('#btnResetYes').addEventListener('click', () => { const snd = S.sound; S = JSON.parse(JSON.stringify(DEF)); S.sound = snd; save(); resetUI(); renderMap(); });
+
+  renderMap();
+})();
 </script>
 </body>
 </html>
